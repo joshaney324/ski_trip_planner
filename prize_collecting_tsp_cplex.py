@@ -97,7 +97,7 @@ found = False
 depot_name = ''
 
 while not found:
-    depot_name = input('Please enter a starting resort:')
+    depot_name = input('Please enter a starting resort: ')
     if depot_name in all_resort_names:
         found = True
     else:
