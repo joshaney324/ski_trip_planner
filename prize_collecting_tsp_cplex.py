@@ -3,6 +3,8 @@ from docplex.mp.model import Model
 import cplex
 import csv
 import numpy as np
+import folium
+
 
 print(cplex.__version__)
 
@@ -53,7 +55,7 @@ for edge_name in distances_dict:
 # constraints
 
 # max distance constraint
-max_distance = 1000
+max_distance = int(input('Please input the max distance round trip you are willing to travel: '))
 
 distance_sum = mdl.sum(distances_dict[e] * edge_vars[e] for e in edge_vars)
 
@@ -84,6 +86,44 @@ for resort_name, resort_var in resort_vars.items():
     mdl.add_constraint(resort_var == total_outgoing)
     mdl.add_constraint(resort_var == total_incoming)
 
+# max path length before completing tour
+n = len(resorts)
+u_vars = {}
+for resort_name in resort_vars:
+    u_vars[resort_name] = mdl.integer_var(0, n - 1, f"u_{resort_name}")
+
+# choose first resort
+found = False
+depot_name = ''
+
+while not found:
+    depot_name = input('Please enter a starting resort:')
+    if depot_name in all_resort_names:
+        found = True
+    else:
+        print('Invalid name')
+        print('Here are the available resorts:')
+        for resort in all_resort_names:
+            print(resort)
+
+
+mdl.add_constraint(resort_vars[depot_name] == 1)
+mdl.add_constraint(u_vars[depot_name] == 0)
+
+M = n
+for edge_name, edge_var in edge_vars.items():
+    start, end = edge_name.split("->")
+    if end != depot_name:
+
+        # M * 1 - edge_var = if edge is not used it will be 0, 0 + len(resorts)
+
+        # making sure the end of the edge comes before the start of the edge
+
+        # M is just used to handle when edge is not used
+
+        mdl.add_constraint(u_vars[end] - u_vars[start] + M * (1 - edge_var) >= 1)
+
+
 # objective
 mdl.maximize(mdl.sum((0.5 * snow_24h[resort_name] + 0.5 * snow_7d[resort_name]) * resort_var for resort_name, resort_var in resort_vars.items()))
 
@@ -102,4 +142,34 @@ for edge_name, edge_var in edge_vars.items():
         total_traveled += distances_dict[edge_name]
 
 print("Total traveled distance:", total_traveled)
+
+resorts_by_name = {resort["name"]: resort for resort in resorts}
+
+m = folium.Map(location=[resorts_by_name[depot_name]["lat"], resorts_by_name[depot_name]["lon"]], zoom_start=6) # center on starting location
+
+# dark visited resorts
+for resort in resorts:
+  name = resort["name"]
+  if solution[resort_vars[name]] == 1:
+      folium.Marker(
+          location=[resort["lat"], resort["lon"]],
+          popup=name,
+          icon=folium.Icon(color="green")
+      ).add_to(m)
+
+# draw tour edges
+for edge_name, edge_var in edge_vars.items():
+  if solution[edge_var] == 1:
+      start, end = edge_name.split("->")
+      start_resort = next(r for r in resorts if r["name"] == start)
+      end_resort = next(r for r in resorts if r["name"] == end)
+      folium.PolyLine(
+          [[start_resort["lat"], start_resort["lon"]],
+           [end_resort["lat"], end_resort["lon"]]],
+          color="blue", weight=2
+      ).add_to(m)
+
+m.save("optimal_trip.html")
+
+
 
