@@ -83,7 +83,6 @@ for resort_name, resort_var in resort_vars.items():
 
     mdl.add_constraint(resort_var == total_outgoing)
     mdl.add_constraint(resort_var == total_incoming)
-    mdl.add_constraint(total_incoming == total_outgoing)
 
 # objective
 mdl.maximize(mdl.sum((0.5 * snow_24h[resort_name] + 0.5 * snow_7d[resort_name]) * resort_var for resort_name, resort_var in resort_vars.items()))
