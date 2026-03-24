@@ -2,7 +2,7 @@ import json
 import csv
 import random
 
-TARGET = 3000
+TARGET = 200
 
 random.seed(42)
 

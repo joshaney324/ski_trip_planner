@@ -6,11 +6,12 @@ import numpy as np
 import folium
 
 
-print(cplex.__version__)
+print(cplex.Cplex().get_version())
+print(cplex.__file__)
 
 mdl = Model(name="pc_tsp_solver")
 
-with open("dataset_mini/ski_resorts.json") as f:
+with open("gigantic_dataset/ski_resorts.json") as f:
     resorts = json.load(f)["ski_resorts"]
 
 snow_24h = {}
@@ -29,10 +30,10 @@ for resort in resorts:
     resort_vars[resort["name"]] = mdl.integer_var(0, 1, resort["name"])
 
 # add edge vars
-with open('dataset_mini/resort_distances.csv', newline='') as csvfile:
+with open('gigantic_dataset/resort_distances.csv', newline='') as csvfile:
     reader = csv.reader(csvfile)
     next(reader)
-    distance = [[float(v) for v in row[0:]] for row in reader]
+    distance = [[float(v) for v in row[1:]] for row in reader]
 
 distances = np.array(distance)
 # print(distances.shape)
@@ -54,8 +55,16 @@ for edge_name in distances_dict:
 
 # constraints
 
+
+# if using regular datasets
+
 # max distance constraint
 max_distance = int(input('Please input the max distance round trip you are willing to travel: '))
+
+# if using gigantic
+
+# max_distance = 3000
+# print('max_distance: ', max_distance)
 
 distance_sum = mdl.sum(distances_dict[e] * edge_vars[e] for e in edge_vars)
 
@@ -127,6 +136,8 @@ for edge_name, edge_var in edge_vars.items():
 # objective
 mdl.maximize(mdl.sum((0.5 * snow_24h[resort_name] + 0.5 * snow_7d[resort_name]) * resort_var for resort_name, resort_var in resort_vars.items()))
 
+
+print('Finding optimal trip...')
 solution = mdl.solve(log_output=False)
 
 print("Objective value:", solution.objective_value)
