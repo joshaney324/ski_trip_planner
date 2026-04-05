@@ -1,866 +1,18 @@
 {
   "ski_resorts": [
     {
-      "name": "Overcrowded Sends-It Crest #73",
-      "state": "Austria",
-      "lat": 52.8463,
-      "lon": -60.4164,
-      "snowfall_24hr_in": 7,
-      "snowfall_7day_in": 11
-    },
-    {
-      "name": "Endor Ewok-Assisted Chairlift",
-      "state": "Endor",
-      "lat": 54.0,
-      "lon": -3.0,
-      "snowfall_24hr_in": 12,
-      "snowfall_7day_in": 66
-    },
-    {
-      "name": "Peak Blizzard Station #43",
-      "state": "Turkey",
-      "lat": 48.2103,
-      "lon": -107.4039,
-      "snowfall_24hr_in": 7,
-      "snowfall_7day_in": 33
-    },
-    {
-      "name": "Rock Bottom Resort",
-      "state": "Mariana Trench",
-      "lat": -11.4,
-      "lon": 142.2,
+      "name": "Elon's Unfinished Mars Resort",
+      "state": "Mars",
+      "lat": 4.5,
+      "lon": -137.4,
       "snowfall_24hr_in": 0,
       "snowfall_7day_in": 0
     },
     {
-      "name": "Red Giant Cryovolcano Carve Installation #11",
-      "state": "TRAPPIST-1e",
-      "lat": 26.2923,
-      "lon": -123.8783,
-      "snowfall_24hr_in": 929,
-      "snowfall_7day_in": 4778
-    },
-    {
-      "name": "Low-Gravity Holographic Half-Pipe Outpost #56",
-      "state": "Orion Arm",
-      "lat": -15.8761,
-      "lon": 133.7514,
-      "snowfall_24hr_in": 4804,
-      "snowfall_7day_in": 8809
-    },
-    {
-      "name": "Lift Line Purgatory",
-      "state": "CO",
-      "lat": 39.6,
-      "lon": -106.4,
-      "snowfall_24hr_in": 5,
-      "snowfall_7day_in": 20
-    },
-    {
-      "name": "High-Radiation Turing Test Terrain Station #45",
-      "state": "Charon",
-      "lat": 7.1584,
-      "lon": 106.8679,
-      "snowfall_24hr_in": 2271,
-      "snowfall_7day_in": 4400
-    },
-    {
-      "name": "Ancient Fumble Inn #86",
-      "state": "Chile",
-      "lat": 39.3529,
-      "lon": 41.1493,
-      "snowfall_24hr_in": 19,
-      "snowfall_7day_in": 20
-    },
-    {
-      "name": "Mediocre Mountain",
-      "state": "NJ",
-      "lat": 40.0,
-      "lon": -74.5,
-      "snowfall_24hr_in": 1,
-      "snowfall_7day_in": 3
-    },
-    {
-      "name": "Hyperdrive HAL's Horror Halfpipe Frontier #51",
-      "state": "Pluto",
-      "lat": 88.0437,
-      "lon": 10.9393,
-      "snowfall_24hr_in": 4795,
-      "snowfall_7day_in": 17276
-    },
-    {
-      "name": "Mount Overpriced",
-      "state": "VT",
-      "lat": 44.5,
-      "lon": -72.8,
-      "snowfall_24hr_in": 5,
-      "snowfall_7day_in": 22
-    },
-    {
-      "name": "Pangalactic Crater Bowl Platform #46",
-      "state": "Titan",
-      "lat": 15.8158,
-      "lon": -173.3504,
-      "snowfall_24hr_in": 121,
-      "snowfall_7day_in": 7917
-    },
-    {
-      "name": "Fluffy Snowdrift Domain #80",
-      "state": "Sweden",
-      "lat": 44.2542,
-      "lon": -109.0765,
-      "snowfall_24hr_in": 19,
-      "snowfall_7day_in": 22
-    },
-    {
-      "name": "Admiral Beanie Sanctuary #72",
-      "state": "Norway",
-      "lat": 45.4679,
-      "lon": 79.4904,
-      "snowfall_24hr_in": 20,
-      "snowfall_7day_in": 39
-    },
-    {
-      "name": "Ice Rink With Delusions",
-      "state": "FL",
-      "lat": 27.9,
-      "lon": -82.4,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
-    },
-    {
-      "name": "Hoth Extreme Winter Sports Complex",
-      "state": "Hoth",
-      "lat": -75.0,
-      "lon": 0.0,
-      "snowfall_24hr_in": 9999,
-      "snowfall_7day_in": 9999
-    },
-    {
-      "name": "Ion Storm Skynet Schuss Region #9",
-      "state": "Andromeda Station Alpha",
-      "lat": 8.7611,
-      "lon": 153.1068,
-      "snowfall_24hr_in": 422,
-      "snowfall_7day_in": 4797
-    },
-    {
-      "name": "Dark Energy Terminator Line Resort #20",
-      "state": "Europa",
-      "lat": 62.7168,
-      "lon": 128.6445,
-      "snowfall_24hr_in": 3256,
-      "snowfall_7day_in": 4601
-    },
-    {
-      "name": "Sketchy Ski Bum Chalet #21",
-      "state": "VT",
-      "lat": 28.3303,
-      "lon": -89.0784,
-      "snowfall_24hr_in": 21,
-      "snowfall_7day_in": 34
-    },
-    {
-      "name": "Forgotten Blizzard Peak #30",
-      "state": "Japan",
-      "lat": 38.6015,
-      "lon": -111.8844,
-      "snowfall_24hr_in": 21,
-      "snowfall_7day_in": 33
-    },
-    {
-      "name": "Solar Matrioshka Moguls Sector #27",
-      "state": "Ganymede",
-      "lat": 82.2412,
-      "lon": 68.1322,
-      "snowfall_24hr_in": 4813,
-      "snowfall_7day_in": 15281
-    },
-    {
-      "name": "Season Pass Regret",
-      "state": "UT",
-      "lat": 40.6,
-      "lon": -111.5,
-      "snowfall_24hr_in": 7,
-      "snowfall_7day_in": 32
-    },
-    {
-      "name": "Interdimensional Roche Limit Region #1",
-      "state": "Crab Nebula",
-      "lat": -34.8718,
-      "lon": -34.902,
-      "snowfall_24hr_in": 1018,
-      "snowfall_7day_in": 23584
-    },
-    {
-      "name": "Sketchy Wendigo Station #89",
-      "state": "Kazakhstan",
-      "lat": 47.2156,
-      "lon": 7.7804,
-      "snowfall_24hr_in": 3,
-      "snowfall_7day_in": 31
-    },
-    {
-      "name": "Betelgeuse Before It Explodes",
-      "state": "Betelgeuse Belt",
-      "lat": 0.5,
-      "lon": 0.5,
-      "snowfall_24hr_in": 9000,
-      "snowfall_7day_in": 60000
-    },
-    {
-      "name": "Space Karen's Galactic Shred Zone",
-      "state": "Virgo Cluster",
-      "lat": 10.0,
-      "lon": 15.0,
-      "snowfall_24hr_in": 4444,
-      "snowfall_7day_in": 22222
-    },
-    {
-      "name": "Super Chairlift Cliff #7",
-      "state": "Kazakhstan",
-      "lat": 46.2078,
-      "lon": -119.2222,
-      "snowfall_24hr_in": 12,
-      "snowfall_7day_in": 26
-    },
-    {
-      "name": "Spicy Wobbly Bob Edge #10",
-      "state": "WV",
-      "lat": 45.1364,
-      "lon": 28.4012,
-      "snowfall_24hr_in": 11,
-      "snowfall_7day_in": 15
-    },
-    {
-      "name": "The Singularity Ski Area (One Way Only)",
-      "state": "NGC-1277 Rim",
+      "name": "404 Resort Not Found",
+      "state": "Null Island",
       "lat": 0.0,
       "lon": 0.0,
-      "snowfall_24hr_in": 9999,
-      "snowfall_7day_in": 9999
-    },
-    {
-      "name": "Peak Grumble Ski Area #79",
-      "state": "ME",
-      "lat": 38.6962,
-      "lon": -119.9676,
-      "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 40
-    },
-    {
-      "name": "Photon Ekpyrotic Edge Province #2",
-      "state": "Enceladus",
-      "lat": -81.9048,
-      "lon": -24.3337,
-      "snowfall_24hr_in": 3586,
-      "snowfall_7day_in": 6035
-    },
-    {
-      "name": "General Frozen Fred Valley #54",
-      "state": "Romania",
-      "lat": 39.9438,
-      "lon": 138.1959,
-      "snowfall_24hr_in": 20,
-      "snowfall_7day_in": 20
-    },
-    {
-      "name": "Soggy Frostbite Chalet #42",
-      "state": "Bavaria",
-      "lat": 46.3119,
-      "lon": -116.3528,
-      "snowfall_24hr_in": 13,
-      "snowfall_7day_in": 44
-    },
-    {
-      "name": "Hyperspace Skynet Schuss Ski Lodge Alpha #21",
-      "state": "Eris",
-      "lat": -47.2109,
-      "lon": 66.015,
-      "snowfall_24hr_in": 3997,
-      "snowfall_7day_in": 3997
-    },
-    {
-      "name": "Mediocre Bunny Slope Cabin #34",
-      "state": "BC",
-      "lat": 66.3257,
-      "lon": -44.3608,
-      "snowfall_24hr_in": 5,
-      "snowfall_7day_in": 58
-    },
-    {
-      "name": "Mega Icicle Trails #48",
-      "state": "Austria",
-      "lat": 45.2993,
-      "lon": -116.3866,
-      "snowfall_24hr_in": 10,
-      "snowfall_7day_in": 25
-    },
-    {
-      "name": "Grand Pancake Mountain #20",
-      "state": "Chile",
-      "lat": 46.3538,
-      "lon": 6.0647,
-      "snowfall_24hr_in": 22,
-      "snowfall_7day_in": 29
-    },
-    {
-      "name": "Photon Powder Dome Wilderness #8",
-      "state": "Eris",
-      "lat": -79.3517,
-      "lon": 6.6013,
-      "snowfall_24hr_in": 4444,
-      "snowfall_7day_in": 17985
-    },
-    {
-      "name": "Mount Disappointment",
-      "state": "CA",
-      "lat": 34.3,
-      "lon": -117.7,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 2
-    },
-    {
-      "name": "Mediocre Hufflepuff Territory #14",
-      "state": "AZ",
-      "lat": 44.4256,
-      "lon": 11.6277,
-      "snowfall_24hr_in": 20,
-      "snowfall_7day_in": 58
-    },
-    {
-      "name": "Pangalactic Big Bounce Back Bowl Complex #49",
-      "state": "Magellanic Cloud",
-      "lat": 88.7484,
-      "lon": 124.3329,
-      "snowfall_24hr_in": 3752,
-      "snowfall_7day_in": 3752
-    },
-    {
-      "name": "Wormhole Heat Death Heights Powder Depot Delta #34",
-      "state": "Ganymede",
-      "lat": -5.637,
-      "lon": -152.0428,
-      "snowfall_24hr_in": 2417,
-      "snowfall_7day_in": 6190
-    },
-    {
-      "name": "Lord Hufflepuff Slopes #49",
-      "state": "Morocco",
-      "lat": 45.6096,
-      "lon": 8.6609,
-      "snowfall_24hr_in": 4,
-      "snowfall_7day_in": 17
-    },
-    {
-      "name": "Europa Slushpuppy Express",
-      "state": "Europa",
-      "lat": -1.2,
-      "lon": 34.5,
-      "snowfall_24hr_in": 3000,
-      "snowfall_7day_in": 18000
-    },
-    {
-      "name": "Overcrowded Sneaky Pete Station #62",
-      "state": "Argentina",
-      "lat": 47.9468,
-      "lon": -77.202,
-      "snowfall_24hr_in": 15,
-      "snowfall_7day_in": 16
-    },
-    {
-      "name": "Slightly Uphill Area",
-      "state": "OH",
-      "lat": 40.4,
-      "lon": -82.9,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 1
-    },
-    {
-      "name": "Mega Boot Kingdom #50",
-      "state": "AZ",
-      "lat": 38.0095,
-      "lon": 140.9314,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 18
-    },
-    {
-      "name": "Blessed Powder Keg Ridge #16",
-      "state": "QC",
-      "lat": 64.0883,
-      "lon": -65.4452,
-      "snowfall_24hr_in": 1,
-      "snowfall_7day_in": 37
-    },
-    {
-      "name": "Hyper Bigfoot Kingdom #41",
-      "state": "ID",
-      "lat": 43.8384,
-      "lon": -107.1299,
-      "snowfall_24hr_in": 19,
-      "snowfall_7day_in": 22
-    },
-    {
-      "name": "Vacuum Packet Loss Peak Complex #23",
-      "state": "Sedna",
-      "lat": 52.7135,
-      "lon": -73.9743,
-      "snowfall_24hr_in": 237,
-      "snowfall_7day_in": 1565
-    },
-    {
-      "name": "Extragalactic Terminator Line Region #26",
-      "state": "Sedna",
-      "lat": 71.4153,
-      "lon": 63.5847,
-      "snowfall_24hr_in": 2091,
-      "snowfall_7day_in": 2092
-    },
-    {
-      "name": "Zero-G Liquid Nitrogen Lanes Installation #39",
-      "state": "Kepler-22b",
-      "lat": -8.2514,
-      "lon": 61.0341,
-      "snowfall_24hr_in": 4403,
-      "snowfall_7day_in": 7586
-    },
-    {
-      "name": "Captain Pretzel Valley #65",
-      "state": "Norway",
-      "lat": 46.6572,
-      "lon": -115.5549,
-      "snowfall_24hr_in": 24,
-      "snowfall_7day_in": 40
-    },
-    {
-      "name": "Sketchy Icicle Basin #53",
-      "state": "UT",
-      "lat": 49.7751,
-      "lon": -111.6083,
-      "snowfall_24hr_in": 24,
-      "snowfall_7day_in": 25
-    },
-    {
-      "name": "Enchanted Charges-Hard Summit #11",
-      "state": "CA",
-      "lat": 32.1835,
-      "lon": -115.6061,
-      "snowfall_24hr_in": 21,
-      "snowfall_7day_in": 59
-    },
-    {
-      "name": "Orbital Event Horizon Resort #6",
-      "state": "Sagittarius A* Outskirts",
-      "lat": 28.9399,
-      "lon": -35.6381,
-      "snowfall_24hr_in": 3372,
-      "snowfall_7day_in": 12816
-    },
-    {
-      "name": "Supernova Server Error Schuss Outpost #57",
-      "state": "Horsehead Nebula",
-      "lat": -70.5591,
-      "lon": 2.6537,
-      "snowfall_24hr_in": 2356,
-      "snowfall_7day_in": 13878
-    },
-    {
-      "name": "Overcrowded Fumble Cliff #35",
-      "state": "Iran",
-      "lat": 46.6715,
-      "lon": 10.9914,
-      "snowfall_24hr_in": 21,
-      "snowfall_7day_in": 21
-    },
-    {
-      "name": "Hyperdrive Regolith Run Ski Lodge Alpha #41",
-      "state": "Makemake",
-      "lat": -9.8441,
-      "lon": -94.4717,
-      "snowfall_24hr_in": 3035,
-      "snowfall_7day_in": 10299
-    },
-    {
-      "name": "Grand Binding Heights #12",
-      "state": "Argentina",
-      "lat": 49.8684,
-      "lon": 160.1666,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 92
-    },
-    {
-      "name": "Transdimensional Liquid Nitrogen Lanes Region #48",
-      "state": "Proxima Centauri b",
-      "lat": -81.281,
-      "lon": 101.3953,
-      "snowfall_24hr_in": 4127,
-      "snowfall_7day_in": 14204
-    },
-    {
-      "name": "Enceladus Geyser Halfpipe",
-      "state": "Enceladus",
-      "lat": 82.1,
-      "lon": 54.3,
-      "snowfall_24hr_in": 5000,
-      "snowfall_7day_in": 35000
-    },
-    {
-      "name": "Overrated Noodle Valley #9",
-      "state": "Iran",
-      "lat": 47.5387,
-      "lon": 11.7857,
-      "snowfall_24hr_in": 4,
-      "snowfall_7day_in": 12
-    },
-    {
-      "name": "Frozen Sauron Territory #13",
-      "state": "NC",
-      "lat": 40.9882,
-      "lon": -70.21,
-      "snowfall_24hr_in": 5,
-      "snowfall_7day_in": 5
-    },
-    {
-      "name": "Cursed Slippery Sam Bowl #18",
-      "state": "WV",
-      "lat": 46.4264,
-      "lon": 14.6793,
-      "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 42
-    },
-    {
-      "name": "Mediocre Snowflake Kingdom #32",
-      "state": "Romania",
-      "lat": 39.7186,
-      "lon": -119.7751,
-      "snowfall_24hr_in": 20,
-      "snowfall_7day_in": 34
-    },
-    {
-      "name": "The Double Black That Ate Tourists",
-      "state": "WY",
-      "lat": 43.6,
-      "lon": -110.9,
-      "snowfall_24hr_in": 14,
-      "snowfall_7day_in": 60
-    },
-    {
-      "name": "Monsieur Le Mogul",
-      "state": "France",
-      "lat": 45.8,
-      "lon": 6.7,
-      "snowfall_24hr_in": 10,
-      "snowfall_7day_in": 45
-    },
-    {
-      "name": "Lord of the Bunny Slopes",
-      "state": "Scotland",
-      "lat": 56.8,
-      "lon": -3.9,
-      "snowfall_24hr_in": 3,
-      "snowfall_7day_in": 14
-    },
-    {
-      "name": "AI-Generated Slope (May Hallucinate)",
-      "state": "Neural Net Nebula",
-      "lat": 51.5,
-      "lon": -0.1,
-      "snowfall_24hr_in": 6,
-      "snowfall_7day_in": 6
-    },
-    {
-      "name": "Premium Snowdrift Ski Area #87",
-      "state": "Morocco",
-      "lat": 39.3581,
-      "lon": -112.6161,
-      "snowfall_24hr_in": 5,
-      "snowfall_7day_in": 8
-    },
-    {
-      "name": "Professor Dumbledore Heights #45",
-      "state": "Lebanon",
-      "lat": 50.2021,
-      "lon": 149.3406,
-      "snowfall_24hr_in": 3,
-      "snowfall_7day_in": 14
-    },
-    {
-      "name": "Interdimensional Relativity Ridge Colony #44",
-      "state": "Pluto",
-      "lat": -50.5607,
-      "lon": 132.351,
-      "snowfall_24hr_in": 4540,
-      "snowfall_7day_in": 14147
-    },
-    {
-      "name": "Mount Hubris",
-      "state": "CO",
-      "lat": 39.4,
-      "lon": -106.8,
-      "snowfall_24hr_in": 11,
-      "snowfall_7day_in": 50
-    },
-    {
-      "name": "Ultra Sneaky Pete Lodge #26",
-      "state": "CO",
-      "lat": 68.5392,
-      "lon": 118.5565,
-      "snowfall_24hr_in": 5,
-      "snowfall_7day_in": 36
-    },
-    {
-      "name": "Graviton Drake Equation Drops Region #16",
-      "state": "TRAPPIST-1e",
-      "lat": 12.78,
-      "lon": -95.3846,
-      "snowfall_24hr_in": 2636,
-      "snowfall_7day_in": 6548
-    },
-    {
-      "name": "Tsar Shredovich",
-      "state": "Russia",
-      "lat": 43.5,
-      "lon": 42.9,
-      "snowfall_24hr_in": 6,
-      "snowfall_7day_in": 28
-    },
-    {
-      "name": "Peak Waffle Runs #59",
-      "state": "Australia",
-      "lat": 38.1116,
-      "lon": -115.4884,
-      "snowfall_24hr_in": 4,
-      "snowfall_7day_in": 31
-    },
-    {
-      "name": "Graviton Dyson Sphere Drive Expanse #40",
-      "state": "Crab Nebula",
-      "lat": -71.3741,
-      "lon": -3.8138,
-      "snowfall_24hr_in": 1265,
-      "snowfall_7day_in": 22725
-    },
-    {
-      "name": "Orbital Big Bounce Back Bowl Region #19",
-      "state": "Sedna",
-      "lat": 66.0261,
-      "lon": 168.2445,
-      "snowfall_24hr_in": 125,
-      "snowfall_7day_in": 6842
-    },
-    {
-      "name": "Ancient Brad Top #88",
-      "state": "PA",
-      "lat": 40.0335,
-      "lon": -117.1938,
-      "snowfall_24hr_in": 14,
-      "snowfall_7day_in": 19
-    },
-    {
-      "name": "Haunted Sasquatch Territory #68",
-      "state": "QC",
-      "lat": 44.5015,
-      "lon": -109.2853,
-      "snowfall_24hr_in": 3,
-      "snowfall_7day_in": 12
-    },
-    {
-      "name": "Orbital Big Crunch Cornice Ski Lodge Alpha #50",
-      "state": "Makemake",
-      "lat": -31.6641,
-      "lon": -125.8965,
-      "snowfall_24hr_in": 3633,
-      "snowfall_7day_in": 3963
-    },
-    {
-      "name": "Mordor Ash Skiing (Not Recommended)",
-      "state": "Middle Earth, Mordor",
-      "lat": 40.0,
-      "lon": 28.0,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
-    },
-    {
-      "name": "Red Giant Singularity Shred Dome #33",
-      "state": "Crab Nebula",
-      "lat": 0.3195,
-      "lon": -81.4352,
-      "snowfall_24hr_in": 1082,
-      "snowfall_7day_in": 18476
-    },
-    {
-      "name": "Hogwarts Quidditch Mountain Annex",
-      "state": "Scotland (Magical)",
-      "lat": 57.4,
-      "lon": -4.2,
-      "snowfall_24hr_in": 10,
-      "snowfall_7day_in": 55
-    },
-    {
-      "name": "Stellar Turing Test Terrain Snow Dome Beta #30",
-      "state": "Crab Nebula",
-      "lat": 53.1971,
-      "lon": 38.3293,
-      "snowfall_24hr_in": 4069,
-      "snowfall_7day_in": 16778
-    },
-    {
-      "name": "Blessed Snowdrift Trails #75",
-      "state": "WV",
-      "lat": 48.3245,
-      "lon": -110.0799,
-      "snowfall_24hr_in": 8,
-      "snowfall_7day_in": 9
-    },
-    {
-      "name": "Lawsuit Gulch",
-      "state": "WY",
-      "lat": 43.5,
-      "lon": -110.8,
-      "snowfall_24hr_in": 10,
-      "snowfall_7day_in": 44
-    },
-    {
-      "name": "Great Gondola Domain #17",
-      "state": "Finland",
-      "lat": 70.9653,
-      "lon": 11.1201,
-      "snowfall_24hr_in": 4,
-      "snowfall_7day_in": 25
-    },
-    {
-      "name": "Wild Ragdoll Resort #55",
-      "state": "AZ",
-      "lat": 57.7079,
-      "lon": -12.053,
-      "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 20
-    },
-    {
-      "name": "Admiral Avalanche Ski Area #25",
-      "state": "Norway",
-      "lat": 48.9257,
-      "lon": -114.4668,
-      "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 17
-    },
-    {
-      "name": "Orbital Lag Spike Launch Sector #42",
-      "state": "Ceres",
-      "lat": -18.1311,
-      "lon": -111.0485,
-      "snowfall_24hr_in": 4460,
-      "snowfall_7day_in": 6444
-    },
-    {
-      "name": "The NFT Ski Lodge (Worthless Now)",
-      "state": "Ethereum-Peak",
-      "lat": 40.7,
-      "lon": -74.0,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
-    },
-    {
-      "name": "Antimatter Skynet Schuss Dome #31",
-      "state": "Ceres",
-      "lat": -71.7048,
-      "lon": 45.63,
-      "snowfall_24hr_in": 2053,
-      "snowfall_7day_in": 7199
-    },
-    {
-      "name": "Professor Sauron Point #71",
-      "state": "Morocco",
-      "lat": 43.0835,
-      "lon": -116.1991,
-      "snowfall_24hr_in": 13,
-      "snowfall_7day_in": 19
-    },
-    {
-      "name": "Boson Regolith Run Region #7",
-      "state": "Horsehead Nebula",
-      "lat": -31.4573,
-      "lon": 168.3261,
-      "snowfall_24hr_in": 721,
-      "snowfall_7day_in": 8991
-    },
-    {
-      "name": "Orbital Baryonic Matter Bowl District #54",
-      "state": "Crab Nebula",
-      "lat": 80.7395,
-      "lon": 66.8819,
-      "snowfall_24hr_in": 2560,
-      "snowfall_7day_in": 8692
-    },
-    {
-      "name": "Red Giant Exotic Particle Park Powder Depot Delta #14",
-      "state": "Enceladus",
-      "lat": -88.5434,
-      "lon": 80.9263,
-      "snowfall_24hr_in": 4159,
-      "snowfall_7day_in": 17602
-    },
-    {
-      "name": "Wild Karen Mountain #69",
-      "state": "MI",
-      "lat": 47.6321,
-      "lon": 9.3778,
-      "snowfall_24hr_in": 22,
-      "snowfall_7day_in": 23
-    },
-    {
-      "name": "Zero-G Boltzmann Brain Basin Sector #36",
-      "state": "TRAPPIST-1e",
-      "lat": 78.372,
-      "lon": -140.2121,
-      "snowfall_24hr_in": 2147,
-      "snowfall_7day_in": 23070
-    },
-    {
-      "name": "Subspace Matrioshka Moguls Outpost #32",
-      "state": "Moon",
-      "lat": -72.9563,
-      "lon": -73.3505,
-      "snowfall_24hr_in": 4747,
-      "snowfall_7day_in": 9053
-    },
-    {
-      "name": "The Wall (No Lifts North of It)",
-      "state": "Night's Watch HQ",
-      "lat": 70.0,
-      "lon": 0.0,
-      "snowfall_24hr_in": 50,
-      "snowfall_7day_in": 350
-    },
-    {
-      "name": "Discount Bigfoot Ridge #70",
-      "state": "Turkey",
-      "lat": 64.9638,
-      "lon": 34.1399,
-      "snowfall_24hr_in": 3,
-      "snowfall_7day_in": 8
-    },
-    {
-      "name": "Super Powder Keg Inn #61",
-      "state": "Andorra",
-      "lat": 36.0825,
-      "lon": -116.0201,
-      "snowfall_24hr_in": 24,
-      "snowfall_7day_in": 50
-    },
-    {
-      "name": "Photon Turing Test Terrain District #52",
-      "state": "Sedna",
-      "lat": 27.5389,
-      "lon": 135.2188,
-      "snowfall_24hr_in": 812,
-      "snowfall_7day_in": 7798
-    },
-    {
-      "name": "Tatooine Twin-Sun Slalom (No Snow)",
-      "state": "Tatooine",
-      "lat": 23.0,
-      "lon": 53.0,
       "snowfall_24hr_in": 0,
       "snowfall_7day_in": 0
     },
@@ -873,132 +25,108 @@
       "snowfall_7day_in": 25
     },
     {
-      "name": "Frozen Dizzy Dave Resort #31",
-      "state": "Chile",
-      "lat": 46.4775,
-      "lon": 9.773,
-      "snowfall_24hr_in": 18,
-      "snowfall_7day_in": 58
+      "name": "Hoth Extreme Winter Sports Complex",
+      "state": "Hoth",
+      "lat": -75.0,
+      "lon": 0.0,
+      "snowfall_24hr_in": 9999,
+      "snowfall_7day_in": 9999
     },
     {
-      "name": "Cursed Sends-It Crest #83",
-      "state": "WI",
-      "lat": 36.7193,
-      "lon": -106.0019,
-      "snowfall_24hr_in": 15,
-      "snowfall_7day_in": 16
-    },
-    {
-      "name": "Discount Ragdoll Peak #1",
-      "state": "UT",
-      "lat": 39.2573,
-      "lon": -111.7657,
-      "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 34
-    },
-    {
-      "name": "Discount Dizzy Dave Kingdom #64",
-      "state": "UT",
-      "lat": 42.0006,
-      "lon": -107.2635,
-      "snowfall_24hr_in": 5,
-      "snowfall_7day_in": 9
-    },
-    {
-      "name": "High-Radiation Lagrange Point Shred Hub Epsilon #0",
-      "state": "NGC-1277 Rim",
-      "lat": -59.4657,
-      "lon": -68.875,
-      "snowfall_24hr_in": 1165,
-      "snowfall_7day_in": 1653
-    },
-    {
-      "name": "Wild Falls-A-Lot Trails #23",
-      "state": "Austria",
-      "lat": 47.4553,
-      "lon": 6.4875,
-      "snowfall_24hr_in": 20,
-      "snowfall_7day_in": 32
-    },
-    {
-      "name": "Warp Speed Crater Bowl Shred Hub Epsilon #29",
-      "state": "Triton",
-      "lat": 11.7354,
-      "lon": 66.5162,
-      "snowfall_24hr_in": 3242,
-      "snowfall_7day_in": 3374
-    },
-    {
-      "name": "Ion Storm Ring System Rips Station #10",
-      "state": "Sedna",
-      "lat": -60.8087,
-      "lon": 18.2004,
-      "snowfall_24hr_in": 4987,
-      "snowfall_7day_in": 16616
-    },
-    {
-      "name": "Forgotten Slushpuppy Summit #76",
-      "state": "NY",
-      "lat": 47.9632,
-      "lon": 87.776,
-      "snowfall_24hr_in": 22,
-      "snowfall_7day_in": 63
-    },
-    {
-      "name": "Mt. Bigfoot Valley #67",
-      "state": "UT",
-      "lat": 37.3854,
-      "lon": 140.262,
+      "name": "Ski Karen's Peak",
+      "state": "CT",
+      "lat": 41.5,
+      "lon": -73.1,
       "snowfall_24hr_in": 3,
+      "snowfall_7day_in": 12
+    },
+    {
+      "name": "Blessed Powder Keg Ridge #16",
+      "state": "QC",
+      "lat": 64.0883,
+      "lon": -65.4452,
+      "snowfall_24hr_in": 1,
+      "snowfall_7day_in": 37
+    },
+    {
+      "name": "Tsar Shredovich",
+      "state": "Russia",
+      "lat": 43.5,
+      "lon": 42.9,
+      "snowfall_24hr_in": 6,
+      "snowfall_7day_in": 28
+    },
+    {
+      "name": "Ambulance Alley",
+      "state": "CA",
+      "lat": 37.6,
+      "lon": -119.0,
+      "snowfall_24hr_in": 7,
       "snowfall_7day_in": 30
     },
     {
-      "name": "Doctor Shreds-Gnar Edge #78",
-      "state": "New Zealand",
-      "lat": 49.9528,
-      "lon": -112.6434,
-      "snowfall_24hr_in": 11,
-      "snowfall_7day_in": 69
+      "name": "AI-Generated Slope (May Hallucinate)",
+      "state": "Neural Net Nebula",
+      "lat": 51.5,
+      "lon": -0.1,
+      "snowfall_24hr_in": 6,
+      "snowfall_7day_in": 6
     },
     {
-      "name": "Chad's Extremely Dangerous Cliffs",
-      "state": "CO",
-      "lat": 39.7,
-      "lon": -106.5,
-      "snowfall_24hr_in": 8,
-      "snowfall_7day_in": 35
-    },
-    {
-      "name": "Red Giant Regolith Run Resort #17",
-      "state": "Horsehead Nebula",
-      "lat": 86.9377,
-      "lon": 104.6769,
-      "snowfall_24hr_in": 3874,
-      "snowfall_7day_in": 16525
-    },
-    {
-      "name": "Where's the Powder",
-      "state": "VA",
-      "lat": 37.4,
-      "lon": -79.1,
-      "snowfall_24hr_in": 1,
-      "snowfall_7day_in": 4
-    },
-    {
-      "name": "Dark Energy Crater Bowl Reaches #37",
+      "name": "Plasma Time Dilation Drop Void #7",
       "state": "Io",
-      "lat": 26.2821,
-      "lon": 48.4746,
-      "snowfall_24hr_in": 4599,
-      "snowfall_7day_in": 11852
+      "lat": -56.3391,
+      "lon": -13.3792,
+      "snowfall_24hr_in": 3675,
+      "snowfall_7day_in": 7131
     },
     {
-      "name": "Underrated Stumble Empire #82",
-      "state": "OR",
-      "lat": 42.5279,
-      "lon": 136.9233,
+      "name": "Space Karen's Galactic Shred Zone",
+      "state": "Virgo Cluster",
+      "lat": 10.0,
+      "lon": 15.0,
+      "snowfall_24hr_in": 4444,
+      "snowfall_7day_in": 22222
+    },
+    {
+      "name": "Monsieur Le Mogul",
+      "state": "France",
+      "lat": 45.8,
+      "lon": 6.7,
+      "snowfall_24hr_in": 10,
+      "snowfall_7day_in": 45
+    },
+    {
+      "name": "The NFT Ski Lodge (Worthless Now)",
+      "state": "Ethereum-Peak",
+      "lat": 40.7,
+      "lon": -74.0,
       "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 36
+      "snowfall_7day_in": 0
+    },
+    {
+      "name": "Antimatter Ice Geyser Glades Resort #2",
+      "state": "Io",
+      "lat": -49.8013,
+      "lon": -153.5845,
+      "snowfall_24hr_in": 172,
+      "snowfall_7day_in": 9813
+    },
+    {
+      "name": "Enceladus Geyser Halfpipe",
+      "state": "Enceladus",
+      "lat": 82.1,
+      "lon": 54.3,
+      "snowfall_24hr_in": 5000,
+      "snowfall_7day_in": 35000
+    },
+    {
+      "name": "The Mogul That Broke My Hip",
+      "state": "MT",
+      "lat": 45.3,
+      "lon": -111.4,
+      "snowfall_24hr_in": 9,
+      "snowfall_7day_in": 40
     },
     {
       "name": "Premium Green Circle Mountain #0",
@@ -1017,12 +145,12 @@
       "snowfall_7day_in": 9
     },
     {
-      "name": "Underrated Halfpipe Point #40",
-      "state": "OR",
-      "lat": 41.1051,
-      "lon": -106.1375,
-      "snowfall_24hr_in": 1,
-      "snowfall_7day_in": 14
+      "name": "Herr Doktor Von Snowplow",
+      "state": "Germany",
+      "lat": 47.5,
+      "lon": 12.9,
+      "snowfall_24hr_in": 8,
+      "snowfall_7day_in": 36
     },
     {
       "name": "Hyper Pretzel Lodge #8",
@@ -1033,148 +161,12 @@
       "snowfall_7day_in": 11
     },
     {
-      "name": "Frozen Binding Chalet #47",
-      "state": "Andorra",
-      "lat": 36.6214,
-      "lon": -114.587,
-      "snowfall_24hr_in": 16,
-      "snowfall_7day_in": 59
-    },
-    {
-      "name": "Flat Earther's Round Mountain",
-      "state": "Flat Earth",
-      "lat": 90.0,
-      "lon": 0.0,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
-    },
-    {
-      "name": "Bikini Bottom Ice Cap",
-      "state": "Pacific Ocean Floor",
-      "lat": -20.0,
-      "lon": -157.0,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
-    },
-    {
-      "name": "High-Radiation Drake Equation Drops Dome #13",
-      "state": "TRAPPIST-1e",
-      "lat": 67.5201,
-      "lon": 130.3216,
-      "snowfall_24hr_in": 4910,
-      "snowfall_7day_in": 29364
-    },
-    {
-      "name": "Turbo Drops-In Crest #77",
-      "state": "UT",
-      "lat": 39.1023,
-      "lon": -110.2396,
-      "snowfall_24hr_in": 9,
-      "snowfall_7day_in": 83
-    },
-    {
-      "name": "Ultradimensional Terminator Line Station #3",
-      "state": "Charon",
-      "lat": 59.8006,
-      "lon": 26.9213,
-      "snowfall_24hr_in": 748,
-      "snowfall_7day_in": 11795
-    },
-    {
-      "name": "Elon's Unfinished Mars Resort",
-      "state": "Mars",
-      "lat": 4.5,
-      "lon": -137.4,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
-    },
-    {
-      "name": "Antimatter Lag Spike Launch Snow Dome Beta #35",
-      "state": "Horsehead Nebula",
-      "lat": 51.7414,
-      "lon": -174.0171,
-      "snowfall_24hr_in": 3255,
-      "snowfall_7day_in": 6214
-    },
-    {
-      "name": "Little Tomahawk Domain #24",
-      "state": "WI",
-      "lat": 30.1356,
-      "lon": -104.8594,
-      "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 25
-    },
-    {
-      "name": "Fluffy Terrain Park Trails #15",
-      "state": "NM",
-      "lat": 47.1145,
-      "lon": 10.7732,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 41
-    },
-    {
-      "name": "Mustafar Lava Skiing (10/10 Extreme)",
-      "state": "Mustafar",
-      "lat": -11.0,
-      "lon": 42.0,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
-    },
-    {
-      "name": "Luxury Wendigo Station #4",
-      "state": "VT",
-      "lat": 50.2027,
-      "lon": 160.8594,
-      "snowfall_24hr_in": 12,
-      "snowfall_7day_in": 20
-    },
-    {
-      "name": "Cursed Snowdrift Inn #27",
-      "state": "ON",
-      "lat": 32.7379,
-      "lon": -169.2672,
-      "snowfall_24hr_in": 12,
-      "snowfall_7day_in": 41
-    },
-    {
-      "name": "General Snowpack Crest #2",
-      "state": "Chile",
-      "lat": 48.1702,
-      "lon": -109.1003,
-      "snowfall_24hr_in": 5,
-      "snowfall_7day_in": 59
-    },
-    {
-      "name": "Antimatter Von Neumann Neighborhood Gnar Lab Zeta #59",
-      "state": "TRAPPIST-1f",
-      "lat": -83.8463,
-      "lon": -81.1692,
-      "snowfall_24hr_in": 4595,
-      "snowfall_7day_in": 4596
-    },
-    {
-      "name": "The Mogul That Broke My Hip",
-      "state": "MT",
-      "lat": 45.3,
-      "lon": -111.4,
-      "snowfall_24hr_in": 9,
-      "snowfall_7day_in": 40
-    },
-    {
-      "name": "Gnarly Falls-A-Lot Station #51",
-      "state": "Chile",
-      "lat": 38.2225,
-      "lon": 139.9761,
-      "snowfall_24hr_in": 21,
-      "snowfall_7day_in": 37
-    },
-    {
-      "name": "Wild Boot Ski Area #6",
-      "state": "Norway",
-      "lat": 38.6483,
-      "lon": 139.3316,
-      "snowfall_24hr_in": 6,
-      "snowfall_7day_in": 40
+      "name": "Betelgeuse Before It Explodes",
+      "state": "Betelgeuse Belt",
+      "lat": 0.5,
+      "lon": 0.5,
+      "snowfall_24hr_in": 9000,
+      "snowfall_7day_in": 60000
     },
     {
       "name": "Insurance Claim Bowl",
@@ -1185,332 +177,36 @@
       "snowfall_7day_in": 28
     },
     {
-      "name": "Sir Ragdoll Empire #28",
-      "state": "Bulgaria",
-      "lat": 51.1211,
-      "lon": 74.2588,
-      "snowfall_24hr_in": 4,
-      "snowfall_7day_in": 13
-    },
-    {
-      "name": "Colonel Drops-In Summit #84",
-      "state": "Andorra",
-      "lat": 35.5361,
-      "lon": 137.3428,
-      "snowfall_24hr_in": 18,
-      "snowfall_7day_in": 20
-    },
-    {
-      "name": "Stellar Gravity Assist Snow Dome Beta #47",
-      "state": "Enceladus",
-      "lat": -4.2282,
-      "lon": 99.5301,
-      "snowfall_24hr_in": 3448,
-      "snowfall_7day_in": 3968
-    },
-    {
-      "name": "Overcrowded Bunny Slope Domain #22",
-      "state": "Andorra",
-      "lat": 44.972,
-      "lon": 10.2568,
-      "snowfall_24hr_in": 13,
-      "snowfall_7day_in": 16
-    },
-    {
-      "name": "404 Resort Not Found",
-      "state": "Null Island",
-      "lat": 0.0,
-      "lon": 0.0,
+      "name": "Rock Bottom Resort",
+      "state": "Mariana Trench",
+      "lat": -11.4,
+      "lon": 142.2,
       "snowfall_24hr_in": 0,
       "snowfall_7day_in": 0
     },
     {
-      "name": "Grand Starfish Point #60",
-      "state": "WI",
-      "lat": 45.6631,
-      "lon": 7.8615,
-      "snowfall_24hr_in": 13,
-      "snowfall_7day_in": 50
+      "name": "Europa Slushpuppy Express",
+      "state": "Europa",
+      "lat": -1.2,
+      "lon": 34.5,
+      "snowfall_24hr_in": 3000,
+      "snowfall_7day_in": 18000
     },
     {
-      "name": "Big Yodeler Runs #38",
-      "state": "OR",
-      "lat": 37.6196,
-      "lon": 142.6711,
+      "name": "Discount Ragdoll Peak #1",
+      "state": "UT",
+      "lat": 39.2573,
+      "lon": -111.7657,
       "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 71
+      "snowfall_7day_in": 34
     },
     {
-      "name": "Schrodinger's Ski Slope",
-      "state": "Quantum Foam",
-      "lat": 0.0,
-      "lon": 0.0,
-      "snowfall_24hr_in": 12,
-      "snowfall_7day_in": 12
-    },
-    {
-      "name": "Fluffy Stumble Resort #81",
-      "state": "QC",
-      "lat": 36.1981,
-      "lon": -112.9197,
-      "snowfall_24hr_in": 8,
-      "snowfall_7day_in": 8
-    },
-    {
-      "name": "Neutron Star Cryovolcano Carve Wilderness #43",
-      "state": "Titan",
-      "lat": 51.0494,
-      "lon": -91.8023,
-      "snowfall_24hr_in": 1737,
-      "snowfall_7day_in": 1788
-    },
-    {
-      "name": "Lunar HAL's Horror Halfpipe Gnar Lab Zeta #25",
-      "state": "Ganymede",
-      "lat": 73.4836,
-      "lon": -127.7639,
-      "snowfall_24hr_in": 3133,
-      "snowfall_7day_in": 11286
-    },
-    {
-      "name": "Haunted Cat Track Station #56",
-      "state": "Norway",
-      "lat": 44.8789,
-      "lon": 141.3591,
-      "snowfall_24hr_in": 24,
-      "snowfall_7day_in": 63
-    },
-    {
-      "name": "Supernova Slingshot Slalom Installation #24",
-      "state": "Ceres",
-      "lat": 32.3605,
-      "lon": -114.5396,
-      "snowfall_24hr_in": 4351,
-      "snowfall_7day_in": 22895
-    },
-    {
-      "name": "Transdimensional NPC Nursery Wilderness #15",
-      "state": "Virgo Cluster",
-      "lat": 6.8673,
-      "lon": -55.4456,
-      "snowfall_24hr_in": 4011,
-      "snowfall_7day_in": 7669
-    },
-    {
-      "name": "Ancient Bigfoot Territory #74",
-      "state": "Norway",
-      "lat": 46.6728,
-      "lon": 9.0276,
-      "snowfall_24hr_in": 15,
-      "snowfall_7day_in": 26
-    },
-    {
-      "name": "Spicy Wobble Territory #58",
-      "state": "New Zealand",
-      "lat": 44.957,
-      "lon": 9.9589,
-      "snowfall_24hr_in": 22,
-      "snowfall_7day_in": 29
-    },
-    {
-      "name": "Count Tomahawk Domain #63",
-      "state": "NM",
-      "lat": 68.2185,
-      "lon": 163.4455,
-      "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 18
-    },
-    {
-      "name": "Turbo Grumble Heights #19",
-      "state": "Morocco",
-      "lat": 39.381,
-      "lon": 140.6582,
-      "snowfall_24hr_in": 3,
-      "snowfall_7day_in": 17
-    },
-    {
-      "name": "Sir Crashes-A-Lot",
-      "state": "Switzerland",
-      "lat": 46.5,
-      "lon": 7.9,
-      "snowfall_24hr_in": 12,
-      "snowfall_7day_in": 55
-    },
-    {
-      "name": "Ambulance Alley",
-      "state": "CA",
-      "lat": 37.6,
-      "lon": -119.0,
-      "snowfall_24hr_in": 7,
-      "snowfall_7day_in": 30
-    },
-    {
-      "name": "High-Radiation Big Crunch Cornice Outpost #18",
-      "state": "NGC-1277 Rim",
-      "lat": 65.8067,
-      "lon": 133.9602,
-      "snowfall_24hr_in": 1034,
-      "snowfall_7day_in": 22791
-    },
-    {
-      "name": "Subspace Matrix Moguls District #38",
-      "state": "Sedna",
-      "lat": 79.4346,
-      "lon": -70.0375,
-      "snowfall_24hr_in": 955,
-      "snowfall_7day_in": 1697
-    },
-    {
-      "name": "Narnia's Perpetual-Winter Resort",
-      "state": "Narnia",
-      "lat": 55.0,
-      "lon": -2.0,
-      "snowfall_24hr_in": 24,
-      "snowfall_7day_in": 168
-    },
-    {
-      "name": "Ski Patrol's Nightmare",
-      "state": "VT",
-      "lat": 43.6,
-      "lon": -72.8,
-      "snowfall_24hr_in": 4,
-      "snowfall_7day_in": 18
-    },
-    {
-      "name": "Herr Doktor Von Snowplow",
-      "state": "Germany",
-      "lat": 47.5,
-      "lon": 12.9,
-      "snowfall_24hr_in": 8,
-      "snowfall_7day_in": 36
-    },
-    {
-      "name": "Warp Speed Big Rip Ridgeline Ski Lodge Alpha #12",
-      "state": "Oort Cloud Outpost",
-      "lat": 85.4835,
-      "lon": -91.7443,
-      "snowfall_24hr_in": 2239,
-      "snowfall_7day_in": 18049
-    },
-    {
-      "name": "Transdimensional Von Neumann Neighborhood Frontier #5",
-      "state": "Ganymede",
-      "lat": -27.0629,
-      "lon": -59.6756,
-      "snowfall_24hr_in": 4028,
-      "snowfall_7day_in": 5953
-    },
-    {
-      "name": "Baron Chairlift Mountain #33",
-      "state": "Norway",
-      "lat": 40.6299,
-      "lon": 136.8998,
-      "snowfall_24hr_in": 17,
-      "snowfall_7day_in": 33
-    },
-    {
-      "name": "Pangalactic Heat Death Heights Installation #58",
-      "state": "Pluto",
-      "lat": -23.5741,
-      "lon": 94.0128,
-      "snowfall_24hr_in": 886,
-      "snowfall_7day_in": 19113
-    },
-    {
-      "name": "Haunted Biscuit Slopes #44",
-      "state": "ME",
-      "lat": 45.2405,
-      "lon": -115.2261,
-      "snowfall_24hr_in": 8,
-      "snowfall_7day_in": 12
-    },
-    {
-      "name": "Winterfell Ski and Slay",
-      "state": "Westeros",
-      "lat": 60.0,
-      "lon": -5.0,
-      "snowfall_24hr_in": 15,
-      "snowfall_7day_in": 90
-    },
-    {
-      "name": "Hyper Wendigo Tip #37",
-      "state": "Finland",
-      "lat": 48.7142,
-      "lon": -121.1364,
-      "snowfall_24hr_in": 20,
-      "snowfall_7day_in": 37
-    },
-    {
-      "name": "Great Shreds-Gnar Mountain #66",
-      "state": "Australia",
-      "lat": 49.3269,
-      "lon": -118.1882,
-      "snowfall_24hr_in": 2,
-      "snowfall_7day_in": 7
-    },
-    {
-      "name": "Enchanted Ragdoll Lodge #57",
-      "state": "Scotland",
-      "lat": 44.6366,
-      "lon": 13.7535,
-      "snowfall_24hr_in": 14,
-      "snowfall_7day_in": 38
-    },
-    {
-      "name": "Discount Wendigo Peak #46",
-      "state": "ID",
-      "lat": 45.3827,
-      "lon": 13.0779,
-      "snowfall_24hr_in": 13,
-      "snowfall_7day_in": 78
-    },
-    {
-      "name": "Sir Beanie Ledge #5",
-      "state": "AK",
-      "lat": 27.1537,
-      "lon": -92.5146,
-      "snowfall_24hr_in": 9,
-      "snowfall_7day_in": 12
-    },
-    {
-      "name": "Spicy Double Black Edge #85",
-      "state": "Bavaria",
-      "lat": 42.9074,
-      "lon": 138.0312,
-      "snowfall_24hr_in": 16,
-      "snowfall_7day_in": 44
-    },
-    {
-      "name": "Baron Von Chairlift",
-      "state": "Austria",
-      "lat": 47.2,
-      "lon": 12.7,
-      "snowfall_24hr_in": 9,
-      "snowfall_7day_in": 42
-    },
-    {
-      "name": "Fake Snow Fantasy",
-      "state": "TX",
-      "lat": 30.3,
-      "lon": -97.7,
-      "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
-    },
-    {
-      "name": "Antimatter 404 Slope Not Found Colony #22",
-      "state": "Triton",
-      "lat": 23.8071,
-      "lon": 133.3834,
-      "snowfall_24hr_in": 3555,
-      "snowfall_7day_in": 6669
-    },
-    {
-      "name": "Dark Matter Von Neumann Neighborhood Region #53",
-      "state": "TRAPPIST-1e",
-      "lat": 58.2806,
-      "lon": -36.2546,
-      "snowfall_24hr_in": 1871,
-      "snowfall_7day_in": 12977
+      "name": "Orbital Liquid Nitrogen Lanes Wilderness #5",
+      "state": "Callisto",
+      "lat": -15.8238,
+      "lon": 130.2536,
+      "snowfall_24hr_in": 3531,
+      "snowfall_7day_in": 17410
     },
     {
       "name": "Flat Earth Ski Resort",
@@ -1521,36 +217,28 @@
       "snowfall_7day_in": 1
     },
     {
-      "name": "Cursed Whiteout Kingdom #52",
-      "state": "MT",
-      "lat": 45.294,
-      "lon": -111.4726,
-      "snowfall_24hr_in": 2,
-      "snowfall_7day_in": 21
+      "name": "General Snowpack Crest #2",
+      "state": "Chile",
+      "lat": 48.1702,
+      "lon": -109.1003,
+      "snowfall_24hr_in": 5,
+      "snowfall_7day_in": 59
     },
     {
-      "name": "Subspace Time Dilation Drop Zone #28",
-      "state": "Sedna",
-      "lat": -21.1172,
-      "lon": -50.4926,
-      "snowfall_24hr_in": 3958,
-      "snowfall_7day_in": 4929
-    },
-    {
-      "name": "Hyperdrive Simulation Theory Slalom Outpost #4",
-      "state": "Mars",
-      "lat": 26.9687,
-      "lon": 148.9541,
-      "snowfall_24hr_in": 1435,
-      "snowfall_7day_in": 18440
-    },
-    {
-      "name": "Alderaan (It Was Here Yesterday)",
-      "state": "Former Alderaan System",
-      "lat": 0.0,
-      "lon": 0.0,
+      "name": "Mount Disappointment",
+      "state": "CA",
+      "lat": 34.3,
+      "lon": -117.7,
       "snowfall_24hr_in": 0,
-      "snowfall_7day_in": 0
+      "snowfall_7day_in": 2
+    },
+    {
+      "name": "Mount Hubris",
+      "state": "CO",
+      "lat": 39.4,
+      "lon": -106.8,
+      "snowfall_24hr_in": 11,
+      "snowfall_7day_in": 50
     },
     {
       "name": "Olympus Mons Bunny Slope (Its 22km Tall)",
@@ -1561,44 +249,396 @@
       "snowfall_7day_in": 0
     },
     {
-      "name": "Ski Karen's Peak",
-      "state": "CT",
-      "lat": 41.5,
-      "lon": -73.1,
-      "snowfall_24hr_in": 3,
+      "name": "Mustafar Lava Skiing (10/10 Extreme)",
+      "state": "Mustafar",
+      "lat": -11.0,
+      "lon": 42.0,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 0
+    },
+    {
+      "name": "Mediocre Mountain",
+      "state": "NJ",
+      "lat": 40.0,
+      "lon": -74.5,
+      "snowfall_24hr_in": 1,
+      "snowfall_7day_in": 3
+    },
+    {
+      "name": "Slightly Uphill Area",
+      "state": "OH",
+      "lat": 40.4,
+      "lon": -82.9,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 1
+    },
+    {
+      "name": "The Wall (No Lifts North of It)",
+      "state": "Night's Watch HQ",
+      "lat": 70.0,
+      "lon": 0.0,
+      "snowfall_24hr_in": 50,
+      "snowfall_7day_in": 350
+    },
+    {
+      "name": "Schrodinger's Ski Slope",
+      "state": "Quantum Foam",
+      "lat": 0.0,
+      "lon": 0.0,
+      "snowfall_24hr_in": 12,
       "snowfall_7day_in": 12
     },
     {
-      "name": "Underrated Mogul Ridge #39",
+      "name": "The Double Black That Ate Tourists",
       "state": "WY",
-      "lat": 57.4779,
-      "lon": -119.3215,
-      "snowfall_24hr_in": 1,
-      "snowfall_7day_in": 38
+      "lat": 43.6,
+      "lon": -110.9,
+      "snowfall_24hr_in": 14,
+      "snowfall_7day_in": 60
     },
     {
-      "name": "Mediocre Green Circle Chalet #36",
-      "state": "ID",
-      "lat": 32.3061,
-      "lon": -74.2029,
-      "snowfall_24hr_in": 6,
-      "snowfall_7day_in": 19
+      "name": "Frozen Sauron Territory #13",
+      "state": "NC",
+      "lat": 40.9882,
+      "lon": -70.21,
+      "snowfall_24hr_in": 5,
+      "snowfall_7day_in": 5
     },
     {
-      "name": "Gnarly Hot Toddy Ledge #29",
-      "state": "Australia",
-      "lat": 40.3905,
-      "lon": -121.1476,
-      "snowfall_24hr_in": 15,
-      "snowfall_7day_in": 73
+      "name": "Overrated Noodle Valley #9",
+      "state": "Iran",
+      "lat": 47.5387,
+      "lon": 11.7857,
+      "snowfall_24hr_in": 4,
+      "snowfall_7day_in": 12
     },
     {
-      "name": "Solar Cryovolcano Carve Shred Hub Epsilon #55",
+      "name": "Grand Binding Heights #12",
+      "state": "Argentina",
+      "lat": 49.8684,
+      "lon": 160.1666,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 92
+    },
+    {
+      "name": "Dark Matter Ekpyrotic Edge Platform #4",
       "state": "Kepler-22b",
-      "lat": -71.8115,
-      "lon": 85.489,
-      "snowfall_24hr_in": 699,
-      "snowfall_7day_in": 4236
+      "lat": 50.6623,
+      "lon": 110.0839,
+      "snowfall_24hr_in": 4677,
+      "snowfall_7day_in": 12639
+    },
+    {
+      "name": "Bikini Bottom Ice Cap",
+      "state": "Pacific Ocean Floor",
+      "lat": -20.0,
+      "lon": -157.0,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 0
+    },
+    {
+      "name": "Ski Patrol's Nightmare",
+      "state": "VT",
+      "lat": 43.6,
+      "lon": -72.8,
+      "snowfall_24hr_in": 4,
+      "snowfall_7day_in": 18
+    },
+    {
+      "name": "Season Pass Regret",
+      "state": "UT",
+      "lat": 40.6,
+      "lon": -111.5,
+      "snowfall_24hr_in": 7,
+      "snowfall_7day_in": 32
+    },
+    {
+      "name": "Lunar 500 Internal Server Terror Gnar Lab Zeta #9",
+      "state": "Mars",
+      "lat": -2.5559,
+      "lon": -102.4785,
+      "snowfall_24hr_in": 1936,
+      "snowfall_7day_in": 8594
+    },
+    {
+      "name": "Flat Earther's Round Mountain",
+      "state": "Flat Earth",
+      "lat": 90.0,
+      "lon": 0.0,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 0
+    },
+    {
+      "name": "Super Chairlift Cliff #7",
+      "state": "Kazakhstan",
+      "lat": 46.2078,
+      "lon": -119.2222,
+      "snowfall_24hr_in": 12,
+      "snowfall_7day_in": 26
+    },
+    {
+      "name": "Luxury Wendigo Station #4",
+      "state": "VT",
+      "lat": 50.2027,
+      "lon": 160.8594,
+      "snowfall_24hr_in": 12,
+      "snowfall_7day_in": 20
+    },
+    {
+      "name": "Mordor Ash Skiing (Not Recommended)",
+      "state": "Middle Earth, Mordor",
+      "lat": 40.0,
+      "lon": 28.0,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 0
+    },
+    {
+      "name": "The Singularity Ski Area (One Way Only)",
+      "state": "NGC-1277 Rim",
+      "lat": 0.0,
+      "lon": 0.0,
+      "snowfall_24hr_in": 9999,
+      "snowfall_7day_in": 9999
+    },
+    {
+      "name": "Where's the Powder",
+      "state": "VA",
+      "lat": 37.4,
+      "lon": -79.1,
+      "snowfall_24hr_in": 1,
+      "snowfall_7day_in": 4
+    },
+    {
+      "name": "Narnia's Perpetual-Winter Resort",
+      "state": "Narnia",
+      "lat": 55.0,
+      "lon": -2.0,
+      "snowfall_24hr_in": 24,
+      "snowfall_7day_in": 168
+    },
+    {
+      "name": "Chad's Extremely Dangerous Cliffs",
+      "state": "CO",
+      "lat": 39.7,
+      "lon": -106.5,
+      "snowfall_24hr_in": 8,
+      "snowfall_7day_in": 35
+    },
+    {
+      "name": "Endor Ewok-Assisted Chairlift",
+      "state": "Endor",
+      "lat": 54.0,
+      "lon": -3.0,
+      "snowfall_24hr_in": 12,
+      "snowfall_7day_in": 66
+    },
+    {
+      "name": "Tatooine Twin-Sun Slalom (No Snow)",
+      "state": "Tatooine",
+      "lat": 23.0,
+      "lon": 53.0,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 0
+    },
+    {
+      "name": "Spicy Wobbly Bob Edge #10",
+      "state": "WV",
+      "lat": 45.1364,
+      "lon": 28.4012,
+      "snowfall_24hr_in": 11,
+      "snowfall_7day_in": 15
+    },
+    {
+      "name": "Alderaan (It Was Here Yesterday)",
+      "state": "Former Alderaan System",
+      "lat": 0.0,
+      "lon": 0.0,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 0
+    },
+    {
+      "name": "Wild Boot Ski Area #6",
+      "state": "Norway",
+      "lat": 38.6483,
+      "lon": 139.3316,
+      "snowfall_24hr_in": 6,
+      "snowfall_7day_in": 40
+    },
+    {
+      "name": "Boson Event Horizon Facility #0",
+      "state": "Kepler-22b",
+      "lat": 76.3466,
+      "lon": 91.3849,
+      "snowfall_24hr_in": 4322,
+      "snowfall_7day_in": 11262
+    },
+    {
+      "name": "Lord of the Bunny Slopes",
+      "state": "Scotland",
+      "lat": 56.8,
+      "lon": -3.9,
+      "snowfall_24hr_in": 3,
+      "snowfall_7day_in": 14
+    },
+    {
+      "name": "Lift Line Purgatory",
+      "state": "CO",
+      "lat": 39.6,
+      "lon": -106.4,
+      "snowfall_24hr_in": 5,
+      "snowfall_7day_in": 20
+    },
+    {
+      "name": "Sir Beanie Ledge #5",
+      "state": "AK",
+      "lat": 27.1537,
+      "lon": -92.5146,
+      "snowfall_24hr_in": 9,
+      "snowfall_7day_in": 12
+    },
+    {
+      "name": "Hogwarts Quidditch Mountain Annex",
+      "state": "Scotland (Magical)",
+      "lat": 57.4,
+      "lon": -4.2,
+      "snowfall_24hr_in": 10,
+      "snowfall_7day_in": 55
+    },
+    {
+      "name": "Stellar Dark Side Colony #3",
+      "state": "NGC-1277 Rim",
+      "lat": 2.5198,
+      "lon": -79.3051,
+      "snowfall_24hr_in": 257,
+      "snowfall_7day_in": 2578
+    },
+    {
+      "name": "Mount Overpriced",
+      "state": "VT",
+      "lat": 44.5,
+      "lon": -72.8,
+      "snowfall_24hr_in": 5,
+      "snowfall_7day_in": 22
+    },
+    {
+      "name": "Baron Von Chairlift",
+      "state": "Austria",
+      "lat": 47.2,
+      "lon": 12.7,
+      "snowfall_24hr_in": 9,
+      "snowfall_7day_in": 42
+    },
+    {
+      "name": "Lawsuit Gulch",
+      "state": "WY",
+      "lat": 43.5,
+      "lon": -110.8,
+      "snowfall_24hr_in": 10,
+      "snowfall_7day_in": 44
+    },
+    {
+      "name": "Fluffy Terrain Park Trails #15",
+      "state": "NM",
+      "lat": 47.1145,
+      "lon": 10.7732,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 41
+    },
+    {
+      "name": "Stellar Event Horizon Zone #10",
+      "state": "Eris",
+      "lat": 75.9202,
+      "lon": 102.0763,
+      "snowfall_24hr_in": 17,
+      "snowfall_7day_in": 8707
+    },
+    {
+      "name": "Sir Crashes-A-Lot",
+      "state": "Switzerland",
+      "lat": 46.5,
+      "lon": 7.9,
+      "snowfall_24hr_in": 12,
+      "snowfall_7day_in": 55
+    },
+    {
+      "name": "Great Gondola Domain #17",
+      "state": "Finland",
+      "lat": 70.9653,
+      "lon": 11.1201,
+      "snowfall_24hr_in": 4,
+      "snowfall_7day_in": 25
+    },
+    {
+      "name": "Mediocre Hufflepuff Territory #14",
+      "state": "AZ",
+      "lat": 44.4256,
+      "lon": 11.6277,
+      "snowfall_24hr_in": 20,
+      "snowfall_7day_in": 58
+    },
+    {
+      "name": "Enchanted Charges-Hard Summit #11",
+      "state": "CA",
+      "lat": 32.1835,
+      "lon": -115.6061,
+      "snowfall_24hr_in": 21,
+      "snowfall_7day_in": 59
+    },
+    {
+      "name": "Ice Rink With Delusions",
+      "state": "FL",
+      "lat": 27.9,
+      "lon": -82.4,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 0
+    },
+    {
+      "name": "Solar Matrioshka Moguls Powder Depot Delta #8",
+      "state": "Magellanic Cloud",
+      "lat": 27.0818,
+      "lon": 14.5305,
+      "snowfall_24hr_in": 4508,
+      "snowfall_7day_in": 4715
+    },
+    {
+      "name": "Winterfell Ski and Slay",
+      "state": "Westeros",
+      "lat": 60.0,
+      "lon": -5.0,
+      "snowfall_24hr_in": 15,
+      "snowfall_7day_in": 90
+    },
+    {
+      "name": "Supernova Packet Loss Peak Snow Dome Beta #11",
+      "state": "Triton",
+      "lat": -55.1982,
+      "lon": -101.0631,
+      "snowfall_24hr_in": 4552,
+      "snowfall_7day_in": 9624
+    },
+    {
+      "name": "Plasma Ping Spike Plunge Complex #1",
+      "state": "Betelgeuse Belt",
+      "lat": 71.1313,
+      "lon": -17.368,
+      "snowfall_24hr_in": 3268,
+      "snowfall_7day_in": 17623
+    },
+    {
+      "name": "Metagalactic Matrix Moguls Base #6",
+      "state": "Moon",
+      "lat": -28.6041,
+      "lon": 129.4788,
+      "snowfall_24hr_in": 496,
+      "snowfall_7day_in": 24358
+    },
+    {
+      "name": "Fake Snow Fantasy",
+      "state": "TX",
+      "lat": 30.3,
+      "lon": -97.7,
+      "snowfall_24hr_in": 0,
+      "snowfall_7day_in": 0
     }
   ]
 }
