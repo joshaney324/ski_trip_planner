@@ -1,0 +1,155 @@
+import random
+
+import numpy as np
+import json
+import csv
+
+def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, population_size, scaling_factor, mutation_rate, max_num_genes, depot, chance, max_iters):
+    population = generate_population(population_size, all_resort_names, max_num_genes, depot, chance)
+    population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, distances_dict, scaling_factor)
+
+    for i in range(max_iters):
+
+        # remove n chromosomes and replace with crossover and mutation
+
+        # TODO do tournament to decide who to remove
+
+        # do crossover
+
+        # figure out how to mutate
+
+        # add to population
+
+        # repeat
+
+        pass
+
+def get_meta_data(dataset_path):
+    with open(dataset_path) as f:
+        resorts = json.load(f)["ski_resorts"]
+
+    snow_24h = {}
+    for resort in resorts:
+        snow_24h[resort["name"]] = resort["snowfall_24hr_in"]
+
+    snow_7d = {}
+    for resort in resorts:
+        snow_7d[resort["name"]] = resort["snowfall_7day_in"]
+
+    all_resort_names = snow_24h.keys()
+
+    # add edge vars
+    with open(dataset_path, newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+        distance = [[float(v) for v in row[1:]] for row in reader]
+
+    distances = np.array(distance)
+
+    distances_dict = {}
+
+    for i, row in enumerate(distances):
+        row_name = resorts[i]["name"]
+        for j, col in enumerate(row):
+            col_name = resorts[j]["name"]
+
+            if row_name != col_name:
+                edge_name = row_name + "->" + col_name
+                distances_dict[edge_name] = distances[i][j]
+
+    return all_resort_names, snow_7d, snow_24h, distances_dict
+
+# fitness = sum_over_visited_resorts((.5 * 7d_snowfall) + (.5 * 24hr_snowfall))
+def fitness_function(edges, snow_7d, snow_24h, total_distance, max_distance, scaling_factor):
+    fitness = 0
+    for edge in edges:
+        start, end = edge.split("->")
+        fitness += 0.5 * snow_7d[start] + 0.5 * snow_24h[start]
+
+    return fitness - scaling_factor * abs(total_distance - max_distance)
+
+def mutate(chromosome, all_resort_names):
+    change_range = chromosome[1:-1]
+    depot = chromosome[0]
+
+    visited = set(change_range)
+    nonvisited = list(set(all_resort_names) - visited)
+
+    location = random.randint(0, len(visited)-1)
+    new_resort = random.choice(nonvisited)
+
+    if random.random() < 0.5:
+        change_range.insert(location, new_resort)
+    else:
+        change_range.pop(random.randrange(len(change_range)))
+
+    return depot + change_range + depot
+
+def crossover(chromosome1, chromosome2):
+    depot = chromosome1[0]
+
+    chromosome1 = chromosome1[1:-1]
+    chromosome2 = chromosome2[1:-1]
+
+    max_length = max(len(chromosome1), len(chromosome2))
+    chromosome1 += [None] * (max_length - len(chromosome1))
+    chromosome2 += [None] * (max_length - len(chromosome2))
+
+    new_chromosome = []
+
+    for gene1, gene2 in zip(chromosome1, chromosome2):
+        if random.random() < 0.5:
+            new_chromosome.append(gene1)
+        else:
+            new_chromosome.append(gene2)
+
+    for i in range(len(new_chromosome)):
+        gene = new_chromosome[i]
+        if gene is None:
+            new_chromosome.pop(i)
+
+    return depot + new_chromosome + depot
+
+def generate_edges(chromosome):
+    edges = []
+    last_resort = chromosome[0]
+    for i in range(len(chromosome[1:])):
+        curr_resort = chromosome[i]
+        edges.append(last_resort + "->" + curr_resort)
+        last_resort = curr_resort
+
+    return edges
+
+def generate_population(population_size, all_resort_names, max_num_genes, depot, chance):
+    population = []
+    remaining_resorts = set(all_resort_names)
+    for i in range(population_size):
+        chromosome = []
+        for j in range(max_num_genes - 2):
+            if random.random() < chance:
+                gene = random.choice(list(remaining_resorts))
+                chromosome.append(gene)
+                remaining_resorts.remove(gene)
+
+        chromosome.insert(0, depot)
+        chromosome.append(depot)
+        population.append(chromosome)
+
+    return population
+
+def get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor, distances_dict):
+    pop_fitness = []
+    for chromosome in population:
+        edges = generate_edges(chromosome)
+        total_distance = get_path_distance(edges, distances_dict)
+        fitness = fitness_function(edges, snow_7d, snow_24h, total_distance, max_distance, scaling_factor)
+        pop_fitness.append((fitness, chromosome))
+    pop_fitness.sort(key=lambda x: x[0], reverse=True)
+    return pop_fitness
+
+
+def get_path_distance(edges, distances_dict):
+    total_distance = 0
+    for edge in edges:
+        total_distance += distances_dict[edge]
+    return total_distance
