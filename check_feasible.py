@@ -1,4 +1,4 @@
-def check_feasible(solution, edge_vars, resort_vars, distances_dict, depot, max_distance):
+def check_feasible(solution, edge_vars, distances_dict, depot, max_distance):
     valid = True
     edges = {}
     distance_traveled = 0
