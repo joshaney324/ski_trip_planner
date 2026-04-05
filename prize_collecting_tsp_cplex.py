@@ -5,6 +5,7 @@ import csv
 import numpy as np
 import folium
 
+from check_feasible import check_feasible
 
 print(cplex.Cplex().get_version())
 print(cplex.__file__)
@@ -138,7 +139,7 @@ mdl.maximize(mdl.sum((0.5 * snow_24h[resort_name] + 0.5 * snow_7d[resort_name]) 
 
 
 print('Finding optimal trip...')
-solution = mdl.solve(log_output=False)
+solution = mdl.solve(log_output=True)
 
 print("Objective value:", solution.objective_value)
 
@@ -154,33 +155,35 @@ for edge_name, edge_var in edge_vars.items():
 
 print("Total traveled distance:", total_traveled)
 
-resorts_by_name = {resort["name"]: resort for resort in resorts}
+print(check_feasible(solution, edge_vars, resort_vars, distances_dict, depot_name, max_distance))
 
-m = folium.Map(location=[resorts_by_name[depot_name]["lat"], resorts_by_name[depot_name]["lon"]], zoom_start=6) # center on starting location
-
-# dark visited resorts
-for resort in resorts:
-  name = resort["name"]
-  if solution[resort_vars[name]] == 1:
-      folium.Marker(
-          location=[resort["lat"], resort["lon"]],
-          popup=name,
-          icon=folium.Icon(color="green")
-      ).add_to(m)
-
-# draw tour edges
-for edge_name, edge_var in edge_vars.items():
-  if solution[edge_var] == 1:
-      start, end = edge_name.split("->")
-      start_resort = next(r for r in resorts if r["name"] == start)
-      end_resort = next(r for r in resorts if r["name"] == end)
-      folium.PolyLine(
-          [[start_resort["lat"], start_resort["lon"]],
-           [end_resort["lat"], end_resort["lon"]]],
-          color="blue", weight=2
-      ).add_to(m)
-
-m.save("optimal_trip.html")
+# resorts_by_name = {resort["name"]: resort for resort in resorts}
+#
+# m = folium.Map(location=[resorts_by_name[depot_name]["lat"], resorts_by_name[depot_name]["lon"]], zoom_start=6) # center on starting location
+#
+# # dark visited resorts
+# for resort in resorts:
+#   name = resort["name"]
+#   if solution[resort_vars[name]] == 1:
+#       folium.Marker(
+#           location=[resort["lat"], resort["lon"]],
+#           popup=name,
+#           icon=folium.Icon(color="green")
+#       ).add_to(m)
+#
+# # draw tour edges
+# for edge_name, edge_var in edge_vars.items():
+#   if solution[edge_var] == 1:
+#       start, end = edge_name.split("->")
+#       start_resort = next(r for r in resorts if r["name"] == start)
+#       end_resort = next(r for r in resorts if r["name"] == end)
+#       folium.PolyLine(
+#           [[start_resort["lat"], start_resort["lon"]],
+#            [end_resort["lat"], end_resort["lon"]]],
+#           color="blue", weight=2
+#       ).add_to(m)
+#
+# m.save("optimal_trip.html")
 
 
 
