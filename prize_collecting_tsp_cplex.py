@@ -155,7 +155,7 @@ for edge_name, edge_var in edge_vars.items():
 
 print("Total traveled distance:", total_traveled)
 
-print(check_feasible(solution, edge_vars, resort_vars, distances_dict, depot_name, max_distance))
+print(check_feasible(solution, edge_vars, distances_dict, depot_name, max_distance))
 
 # resorts_by_name = {resort["name"]: resort for resort in resorts}
 #
