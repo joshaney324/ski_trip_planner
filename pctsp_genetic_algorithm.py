@@ -26,7 +26,9 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
                                              distances_dict)
         population_fitness = population_fitness[:-1]
         population = [chromosome[1] for chromosome in population_fitness]
-        print("Best Fitness: " + str(population_fitness[0][0]))
+
+        if i % 5000 == 0:
+            print("Best Fitness at iteration " + str(i) +": " + str(population_fitness[0][0]))
 
     return population
 
@@ -202,7 +204,7 @@ def main():
     depot = "Hoth Extreme Winter Sports Complex"
     max_distance = 2000
 
-    population = genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, 500, 0.5, 0.1, 20,
+    population = genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, 500, 100, 0.1, 20,
                                    depot, 0.3, 50000, 10)
 
     best_individual = population[0]
