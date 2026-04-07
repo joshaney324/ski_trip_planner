@@ -1,9 +1,9 @@
-import json
-from docplex.mp.model import Model
-import cplex
 import csv
+import json
+
+import cplex
 import numpy as np
-import folium
+from docplex.mp.model import Model
 
 from check_feasible import check_feasible
 
@@ -82,7 +82,6 @@ for resort_name, resort_var in resort_vars.items():
 
     for edge_name, edge_var in edge_vars.items():
 
-
         edge_endpoints = edge_name.split("->")
         start = edge_endpoints[0]
         end = edge_endpoints[1]
@@ -116,7 +115,6 @@ while not found:
         for resort in all_resort_names:
             print(resort)
 
-
 mdl.add_constraint(resort_vars[depot_name] == 1)
 mdl.add_constraint(u_vars[depot_name] == 0)
 
@@ -124,7 +122,6 @@ M = n
 for edge_name, edge_var in edge_vars.items():
     start, end = edge_name.split("->")
     if end != depot_name:
-
         # M * 1 - edge_var = if edge is not used it will be 0, 0 + len(resorts)
 
         # making sure the end of the edge comes before the start of the edge
@@ -133,10 +130,10 @@ for edge_name, edge_var in edge_vars.items():
 
         mdl.add_constraint(u_vars[end] - u_vars[start] + M * (1 - edge_var) >= 1)
 
-
 # objective
-mdl.maximize(mdl.sum((0.5 * snow_24h[resort_name] + 0.5 * snow_7d[resort_name]) * resort_var for resort_name, resort_var in resort_vars.items()))
-
+mdl.maximize(mdl.sum(
+    (0.5 * snow_24h[resort_name] + 0.5 * snow_7d[resort_name]) * resort_var for resort_name, resort_var in
+    resort_vars.items()))
 
 print('Finding optimal trip...')
 solution = mdl.solve(log_output=True)
@@ -184,6 +181,3 @@ print(check_feasible(solution, edge_vars, distances_dict, depot_name, max_distan
 #       ).add_to(m)
 #
 # m.save("optimal_trip.html")
-
-
-
