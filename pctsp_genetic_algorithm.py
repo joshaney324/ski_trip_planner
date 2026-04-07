@@ -5,12 +5,11 @@ from pathlib import Path
 
 import numpy as np
 
-from check_feasible import check_feasible
-
 
 def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, population_size,
                       scaling_factor, mutation_rate, max_num_genes, depot, chance, max_iters, tournament_size):
-    population = generate_population(population_size, all_resort_names, max_num_genes, depot, chance)
+    population = generate_population(population_size, all_resort_names, max_num_genes, depot, chance, distances_dict,
+                                     max_distance)
     population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor, distances_dict)
 
     for i in range(max_iters):
@@ -28,7 +27,11 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
         population = [chromosome[1] for chromosome in population_fitness]
 
         if i % 5000 == 0:
-            print("Best Fitness at iteration " + str(i) +": " + str(population_fitness[0][0]))
+            idv = population_fitness[0]
+            fitness = idv[0]
+            edges = generate_edges(idv[1])
+            print("Best Fitness at iteration " + str(i) + ": " + str(fitness))
+            print("Total Distance Traveled: " + str(get_path_distance(edges, distances_dict)))
 
     return population
 
@@ -76,7 +79,7 @@ def fitness_function(edges, snow_7d, snow_24h, total_distance, max_distance, sca
         start, end = edge.split("->")
         fitness += 0.5 * snow_7d[start] + 0.5 * snow_24h[start]
 
-    return fitness - scaling_factor * abs(total_distance - max_distance)
+    return fitness - scaling_factor * max(0, total_distance - max_distance)
 
 
 def mutate(chromosome, all_resort_names):
@@ -89,13 +92,11 @@ def mutate(chromosome, all_resort_names):
     visited = set(change_range)
     nonvisited = list(set(all_resort_names) - visited - {depot})
 
-
     if not nonvisited:
         return chromosome
 
     location = random.randint(0, len(visited) - 1)
     new_resort = random.choice(nonvisited)
-
 
     if random.random() < 0.5:
         change_range.insert(location, new_resort)
@@ -145,10 +146,10 @@ def generate_edges(chromosome):
     return edges
 
 
-def generate_population(population_size, all_resort_names, max_num_genes, depot, chance):
+def generate_population(population_size, all_resort_names, max_num_genes, depot, chance, distances_dict, max_distance):
     population = []
 
-    for i in range(population_size):
+    while len(population) < population_size:
         remaining_resorts = set(all_resort_names)
         remaining_resorts.remove(depot)
 
@@ -161,7 +162,8 @@ def generate_population(population_size, all_resort_names, max_num_genes, depot,
 
         chromosome.insert(0, depot)
         chromosome.append(depot)
-        population.append(chromosome)
+        if check_valid(chromosome, distances_dict, max_distance):
+            population.append(chromosome)
 
     return population
 
@@ -194,6 +196,14 @@ def tournament(pop_fitness, tournament_size):
     return tournament_group[0], tournament_group[1]
 
 
+def check_valid(chromosome, distances_dict, max_distance):
+    edges = generate_edges(chromosome)
+    total_distance = get_path_distance(edges, distances_dict)
+    if total_distance > max_distance:
+        return False
+    return True
+
+
 def main():
     dataset_root = Path("gigantic_dataset")
     all_resort_names, snow_7d, snow_24h, distances_dict = get_meta_data(dataset_root)
@@ -204,16 +214,17 @@ def main():
     depot = "Hoth Extreme Winter Sports Complex"
     max_distance = 2000
 
-    population = genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, 500, 100, 0.1, 20,
-                                   depot, 0.3, 50000, 10)
+    population = genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, 500, 30, 0.1, 20,
+                                   depot, 0.5, 50000, 10)
 
     best_individual = population[0]
     edges = generate_edges(best_individual)
     total_distance = get_path_distance(edges, distances_dict)
 
+    best_fitness = fitness_function(edges, snow_7d, snow_24h, total_distance, max_distance, 0.5)
+    print("Best fitness:", best_fitness)
     print("Total distance:", total_distance)
     print(edges)
-
 
 
 if __name__ == "__main__":
