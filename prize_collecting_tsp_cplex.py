@@ -36,10 +36,14 @@ with open('gigantic_dataset/resort_distances.csv', newline='') as csvfile:
     next(reader)
     distance = [[float(v) for v in row[1:]] for row in reader]
 
+print("Node vars added")
+
 distances = np.array(distance)
 # print(distances.shape)
 
 distances_dict = {}
+
+print("Building distances dict")
 
 for i, row in enumerate(distances):
     row_name = resorts[i]["name"]
@@ -50,63 +54,95 @@ for i, row in enumerate(distances):
             edge_name = row_name + "->" + col_name
             distances_dict[edge_name] = distances[i][j]
 
+    if i % 1000 == 0:
+        print("added " + str(i) + " rows of edge distances")
+
+print("Adding edge variables")
 edge_vars = {}
-for edge_name in distances_dict:
+for i, edge_name in enumerate(distances_dict):
     edge_vars[edge_name] = mdl.integer_var(0, 1, edge_name)
 
+    if i % 1000000 == 0:
+        print("Added " + str(i) + " edge variables")
+
+print("All edge variables added")
 # constraints
 
 
 # if using regular datasets
 
 # max distance constraint
-max_distance = int(input('Please input the max distance round trip you are willing to travel: '))
+# max_distance = int(input('Please input the max distance round trip you are willing to travel: '))
 
 # if using gigantic
 
-# max_distance = 3000
+max_distance = 3000
 # print('max_distance: ', max_distance)
 
+
+print("adding distance constraint")
 distance_sum = mdl.sum(distances_dict[e] * edge_vars[e] for e in edge_vars)
 
 mdl.add_constraint(distance_sum <= max_distance)
 
 # if a resort is visited edge coming in and out
 
+# original constraint
+# for resort_name, resort_var in resort_vars.items():
+#     curr_var = resort_var
+#     curr_name = resort_var.name
+#
+#     total_outgoing = 0
+#     total_incoming = 0
+#
+#     for edge_name, edge_var in edge_vars.items():
+#
+#         edge_endpoints = edge_name.split("->")
+#         start = edge_endpoints[0]
+#         end = edge_endpoints[1]
+#
+#         if start == curr_name:
+#             total_outgoing += edge_var
+#
+#         if end == curr_name:
+#             total_incoming += edge_var
+#
+#     mdl.add_constraint(resort_var == total_outgoing)
+#     mdl.add_constraint(resort_var == total_incoming)
+
+# optimized
+
+print("adding incoming and outcoming edge constraint if visited resort")
+outgoing = {name: [] for name in resort_vars}
+incoming = {name: [] for name in resort_vars}
+for edge_name, edge_var in edge_vars.items():
+  start, end = edge_name.split("->")
+  outgoing[start].append(edge_var)
+  incoming[end].append(edge_var)
+
 for resort_name, resort_var in resort_vars.items():
-    curr_var = resort_var
-    curr_name = resort_var.name
-
-    total_outgoing = 0
-    total_incoming = 0
-
-    for edge_name, edge_var in edge_vars.items():
-
-        edge_endpoints = edge_name.split("->")
-        start = edge_endpoints[0]
-        end = edge_endpoints[1]
-
-        if start == curr_name:
-            total_outgoing += edge_var
-
-        if end == curr_name:
-            total_incoming += edge_var
-
-    mdl.add_constraint(resort_var == total_outgoing)
-    mdl.add_constraint(resort_var == total_incoming)
+  mdl.add_constraint(resort_var == mdl.sum(outgoing[resort_name]))
+  mdl.add_constraint(resort_var == mdl.sum(incoming[resort_name]))
 
 # max path length before completing tour
+
+print("Adding resort ordering vars")
 n = len(resorts)
 u_vars = {}
 for resort_name in resort_vars:
     u_vars[resort_name] = mdl.integer_var(0, n - 1, f"u_{resort_name}")
+
+print("Added resort ordering vars")
 
 # choose first resort
 found = False
 depot_name = ''
 
 while not found:
-    depot_name = input('Please enter a starting resort: ')
+    # if user input
+    # depot_name = input('Please enter a starting resort: ')
+
+    depot_name = "Hoth Extreme Winter Sports Complex"
     if depot_name in all_resort_names:
         found = True
     else:
@@ -115,9 +151,12 @@ while not found:
         for resort in all_resort_names:
             print(resort)
 
+print("Adding depot visited constraint")
 mdl.add_constraint(resort_vars[depot_name] == 1)
 mdl.add_constraint(u_vars[depot_name] == 0)
+print("Added depot visited constraint")
 
+print("Adding edge ordering constraints")
 M = n
 for edge_name, edge_var in edge_vars.items():
     start, end = edge_name.split("->")
@@ -129,6 +168,8 @@ for edge_name, edge_var in edge_vars.items():
         # M is just used to handle when edge is not used
 
         mdl.add_constraint(u_vars[end] - u_vars[start] + M * (1 - edge_var) >= 1)
+
+print("Added edge ordering constraints")
 
 # objective
 mdl.maximize(mdl.sum(
