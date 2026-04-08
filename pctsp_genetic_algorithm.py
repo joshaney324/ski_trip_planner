@@ -7,9 +7,10 @@ import numpy as np
 
 
 def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, population_size,
-                      scaling_factor, mutation_rate, max_num_genes, depot, chance, max_iters, tournament_size):
+                      scaling_factor, mutation_rate, max_num_genes, depot, chance, max_iters, tournament_size,
+                      valid_init=True, repair_all=False):
     population = generate_population(population_size, all_resort_names, max_num_genes, depot, chance, distances_dict,
-                                     max_distance)
+                                     max_distance, valid_init)
     population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor, distances_dict)
 
     for i in range(max_iters):
@@ -19,6 +20,9 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
 
         if random.random() < mutation_rate:
             new_chromosome = mutate(new_chromosome, all_resort_names)
+
+        if repair_all:
+            new_chromosome = repair(new_chromosome, distances_dict, snow_7d, snow_24h, max_distance)
 
         population.append(new_chromosome)
         population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor,
@@ -146,7 +150,7 @@ def generate_edges(chromosome):
     return edges
 
 
-def generate_population(population_size, all_resort_names, max_num_genes, depot, chance, distances_dict, max_distance):
+def generate_population(population_size, all_resort_names, max_num_genes, depot, chance, distances_dict, max_distance, valid_init):
     population = []
 
     while len(population) < population_size:
@@ -162,8 +166,9 @@ def generate_population(population_size, all_resort_names, max_num_genes, depot,
 
         chromosome.insert(0, depot)
         chromosome.append(depot)
-        if check_valid(chromosome, distances_dict, max_distance):
-            population.append(chromosome)
+        if valid_init:
+            if check_valid(chromosome, distances_dict, max_distance):
+                population.append(chromosome)
 
     return population
 
@@ -204,6 +209,28 @@ def check_valid(chromosome, distances_dict, max_distance):
     return True
 
 
+def calc_detour(chromosome, distances_dict, snow_7d, snow_24h):
+    detour = {}
+    for i, stop in enumerate(chromosome[1:-1]):
+        idx = i + 1
+        prev = chromosome[idx - 1]
+        next_ = chromosome[idx + 1]
+        detour_cost = distances_dict[prev + '->' + stop] + distances_dict[stop + '->' + next_] - distances_dict.get(
+            prev + '->' + next_, 0)
+        prize = 0.5 * snow_7d[stop] + 0.5 * snow_24h[stop]
+        detour[stop] = detour_cost / (prize + 0.00000001)
+    return detour
+
+
+def repair(chromosome, distances_dict, snow_7d, snow_24h, max_distance):
+    while get_path_distance(generate_edges(chromosome), distances_dict) > max_distance:
+        detour = calc_detour(chromosome, distances_dict, snow_7d, snow_24h)
+        worst_stop = max(detour, key=detour.get)
+        chromosome.remove(worst_stop)
+
+    return chromosome
+
+
 def main():
     dataset_root = Path("gigantic_dataset")
     all_resort_names, snow_7d, snow_24h, distances_dict = get_meta_data(dataset_root)
@@ -214,8 +241,9 @@ def main():
     depot = "Hoth Extreme Winter Sports Complex"
     max_distance = 2000
 
-    population = genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, 500, 30, 0.1, 20,
-                                   depot, 0.5, 50000, 10)
+    population = genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, 100, 30, 0.05,
+                                   20,
+                                   depot, 0.5, 50000, 10, repair_all=True)
 
     best_individual = population[0]
     edges = generate_edges(best_individual)
