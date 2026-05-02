@@ -1,6 +1,7 @@
 from generate_dataset import create_dataset
 from pctsp_cplex import *
 from pctsp_genetic_algorithm import *
+import pickle
 
 dataset_sizes = [5, 10, 20, 50, 100, 200, 500, 1000, 5000]
 
@@ -43,3 +44,15 @@ for dataset_size in dataset_sizes:
     print(ga_repair_output["best_fitnesses"][-1])
 
     ga_repair_outputs.append(ga_repair_output)
+
+with open("results.pkl", "wb") as f:
+    pickle.dump({
+        "cplex": cplex_outputs,
+        "ga_no_repair": ga_no_repair_outputs,
+        "ga_repair": ga_repair_outputs,
+    }, f)
+
+# load later:
+with open("results.pkl", "rb") as f:
+    results = pickle.load(f)
+
