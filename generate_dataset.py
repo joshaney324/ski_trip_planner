@@ -2,8 +2,6 @@ import json
 import csv
 import random
 
-TARGET = 500
-
 random.seed(42)
 
 
@@ -159,6 +157,52 @@ HAND_CRAFTED = [
 ]
 
 
+def create_dataset(target):
+    resorts = []
+
+    for name, state, lat, lon, s24, s7d in HAND_CRAFTED:
+        resorts.append({
+            "name": name,
+            "state": state,
+            "lat": round(lat, 4),
+            "lon": round(lon, 4),
+            "snowfall_24hr_in": s24,
+            "snowfall_7day_in": s7d,
+        })
+
+    remaining = target - len(resorts)
+    earth_count = int(remaining * 0.6)
+    space_count = remaining - earth_count
+
+    for i in range(earth_count):
+        resorts.append(random_earth_resort(i))
+    for i in range(space_count):
+        resorts.append(random_space_resort(i))
+
+    random.shuffle(resorts)
+
+    print(f"Total resorts generated: {len(resorts)}")
+
+    with open("gigantic_dataset/ski_resorts.json", "w") as f:
+        json.dump({"ski_resorts": resorts}, f, indent=2)
+
+    print(f"Written gigantic_dataset/ski_resorts.json")
+
+    n = len(resorts)
+    names = [r["name"] for r in resorts]
+
+    print(f"Generating {n}x{n} = {n * n:,} distances...")
+
+    with open("gigantic_dataset/resort_distances.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow([""] + names)
+        for i in range(n):
+            if i % 500 == 0:
+                print(f"  Row {i}/{n}...")
+            writer.writerow([names[i]] + [fake_dist(i, j) for j in range(n)])
+
+    print("Written gigantic_dataset/resort_distances.csv")
+
 def random_earth_resort(idx):
     prefix = random.choice(EARTH_PREFIXES)
     mid = random.choice(EARTH_NAMES)
@@ -207,39 +251,7 @@ def random_space_resort(idx):
 
 
 
-resorts = []
 
-for name, state, lat, lon, s24, s7d in HAND_CRAFTED:
-    resorts.append({
-        "name": name,
-        "state": state,
-        "lat": round(lat, 4),
-        "lon": round(lon, 4),
-        "snowfall_24hr_in": s24,
-        "snowfall_7day_in": s7d,
-    })
-
-remaining = TARGET - len(resorts)
-earth_count = int(remaining * 0.6)
-space_count = remaining - earth_count
-
-for i in range(earth_count):
-    resorts.append(random_earth_resort(i))
-for i in range(space_count):
-    resorts.append(random_space_resort(i))
-
-random.shuffle(resorts)
-
-print(f"Total resorts generated: {len(resorts)}")
-
-# ---------------------------------------------------------------------------
-# Write ski_resorts.json
-# ---------------------------------------------------------------------------
-
-with open("gigantic_dataset/ski_resorts.json", "w") as f:
-    json.dump({"ski_resorts": resorts}, f, indent=2)
-
-print(f"Written gigantic_dataset/ski_resorts.json")
 
 # Each entry is computed from f(min(i,j), max(i,j)) so no upper-triangle
 # storage is needed. Distances are fake but symmetric (dist[i][j]==dist[j][i]).
@@ -251,18 +263,3 @@ def fake_dist(i, j):
     a, b = min(i, j), max(i, j)
     h = (a * 1_000_003 + b * 999_983 + a * b * 7) % 1_000_000
     return round(10.0 + (h % 399_001) / 100.0, 2)  # 10–4000 miles
-
-n = len(resorts)
-names = [r["name"] for r in resorts]
-
-print(f"Generating {n}x{n} = {n*n:,} distances...")
-
-with open("gigantic_dataset/resort_distances.csv", "w", newline="") as f:
-    writer = csv.writer(f)
-    writer.writerow([""] + names)
-    for i in range(n):
-        if i % 500 == 0:
-            print(f"  Row {i}/{n}...")
-        writer.writerow([names[i]] + [fake_dist(i, j) for j in range(n)])
-
-print("Written gigantic_dataset/resort_distances.csv")
