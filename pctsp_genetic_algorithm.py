@@ -1,22 +1,46 @@
 import csv
 import json
 import random
+import time
 from pathlib import Path
 
 import numpy as np
 
 
 def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, population_size,
-                      scaling_factor, mutation_rate, max_num_genes, depot, chance, max_iters, tournament_size,
-                      valid_init=True, repair_all=False):
-    population = generate_population(population_size, all_resort_names, max_num_genes, depot, chance, distances_dict,
-                                     max_distance, valid_init)
+                      scaling_factor, mutation_rate, max_num_genes, depot, chance, max_iters, tournament_size, upper_bound,
+                      valid_init=True, repair_all=False, max_time=600, verbose=False,):
+    start = time.time()
+
+    def elapsed():
+        return time.time() - start
+
+    population, init_timed_out = generate_population(population_size, all_resort_names, max_num_genes, depot, chance,
+                                                    distances_dict, max_distance, valid_init,
+                                                    start=start, max_time=max_time)
+
+    if init_timed_out and not population:
+        return {
+            "population": [],
+            "best_fitnesses": [],
+            "pop_fitness_avgs": [],
+            "status": "timeout: population init produced no individuals",
+            "elapsed": elapsed(),
+            "iterations_completed": 0,
+        }
+
     population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor, distances_dict)
 
     pop_fitness_avgs = []
     best_fitnesses = []
+    status = "completed"
+    iterations_completed = 0
 
     for i in range(max_iters):
+        if elapsed() >= max_time:
+            status = f"timeout: hit {max_time}s after {i} iterations"
+            print(status)
+            break
 
         chromosome1, chromosome2 = tournament(population_fitness, tournament_size)
         new_chromosome = crossover(chromosome1[1], chromosome2[1])
@@ -37,8 +61,9 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
         # population_fitness = population_fitness[:-1]
 
         population = [chromosome[1] for chromosome in population_fitness]
+        iterations_completed = i + 1
 
-        if i % 5000 == 0:
+        if verbose and i % 5000 == 0:
             idv = population_fitness[0]
             fitness = idv[0]
             avg_fitness = sum(t[0] for t in population_fitness) / len(population_fitness)
@@ -49,7 +74,24 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
             print("Average Fitness: " + str(avg_fitness))
             print("Total Distance Traveled: " + str(get_path_distance(edges, distances_dict)))
 
-    return population, best_fitnesses, pop_fitness_avgs
+            if best_fitnesses[-1] >= upper_bound and i > 1:
+                return {
+                    "population": population,
+                    "best_fitnesses": best_fitnesses,
+                    "pop_fitness_avgs": pop_fitness_avgs,
+                    "status": status,
+                    "elapsed": elapsed(),
+                    "iterations_completed": iterations_completed,
+                }
+
+    return {
+        "population": population,
+        "best_fitnesses": best_fitnesses,
+        "pop_fitness_avgs": pop_fitness_avgs,
+        "status": status,
+        "elapsed": elapsed(),
+        "iterations_completed": iterations_completed,
+    }
 
 
 def get_meta_data(dataset_root):
@@ -85,7 +127,7 @@ def get_meta_data(dataset_root):
                 edge_name = row_name + "->" + col_name
                 distances_dict[edge_name] = distances[i][j]
 
-    return all_resort_names, snow_7d, snow_24h, distances_dict
+    return resorts, list(all_resort_names), snow_7d, snow_24h, distances_dict
 
 
 # fitness = sum_over_visited_resorts((.5 * 7d_snowfall) + (.5 * 24hr_snowfall))
@@ -171,10 +213,16 @@ def generate_edges(chromosome):
 
 
 def generate_population(population_size, all_resort_names, max_num_genes, depot, chance, distances_dict, max_distance,
-                        valid_init):
+                        valid_init, start=None, max_time=None):
     population = []
+    timed_out = False
 
     while len(population) < population_size:
+        if start is not None and max_time is not None and (time.time() - start) >= max_time:
+            timed_out = True
+            print(f"Population init timed out after generating {len(population)}/{population_size} individuals")
+            break
+
         remaining_resorts = set(all_resort_names)
         remaining_resorts.remove(depot)
 
@@ -193,7 +241,7 @@ def generate_population(population_size, all_resort_names, max_num_genes, depot,
         else:
             population.append(chromosome)
 
-    return population
+    return population, timed_out
 
 
 def get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor, distances_dict):
@@ -262,12 +310,19 @@ def main():
     # max_distance = input("input max distance: ")
 
     depot = "Hoth Extreme Winter Sports Complex"
-    max_distance = 2000
+    max_distance = 3000
 
-    population = genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, 100, 30, 0.2,
-                                   20, depot, 0.3, 100000, 10, valid_init=True, repair_all=True)
+    result = genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, 100, 30, 0.2,
+                               20, depot, 0.3, 100000, 10, valid_init=True, repair_all=True, max_time=600)
 
-    best_individual = population[0][1]
+    print(f"Status: {result['status']}")
+    print(f"Elapsed: {result['elapsed']:.1f}s, iterations: {result['iterations_completed']}")
+
+    if not result["population"]:
+        print("No individuals produced.")
+        return
+
+    best_individual = result["population"][0]
     edges = generate_edges(best_individual)
     total_distance = get_path_distance(edges, distances_dict)
 
