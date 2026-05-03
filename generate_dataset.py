@@ -181,6 +181,9 @@ def create_dataset(target):
 
     random.shuffle(resorts)
 
+    if len(resorts) > target:
+        resorts = resorts[:target]
+
     print(f"Total resorts generated: {len(resorts)}")
 
     with open("gigantic_dataset/ski_resorts.json", "w") as f:
