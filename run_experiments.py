@@ -15,7 +15,7 @@ def cplex_picklable(d):
     return {k: v for k, v in d.items() if k != "solution"}
 
 def save_results():
-    with open("results.pkl", "wb") as f:
+    with open("results/results.pkl", "wb") as f:
         pickle.dump({
             "cplex": [cplex_picklable(d) for d in cplex_outputs],
             "ga_no_repair": ga_no_repair_outputs,
