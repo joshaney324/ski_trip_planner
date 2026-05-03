@@ -57,35 +57,38 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
         # random replacement
         population_fitness.pop(random.randrange(len(population_fitness)))
 
+        if population_fitness[0][0] >= upper_bound and i > 1:
+            return {
+                "population": population_fitness,
+                "best_fitnesses": best_fitnesses,
+                "pop_fitness_avgs": pop_fitness_avgs,
+                "status": status,
+                "elapsed": elapsed(),
+                "iterations_completed": iterations_completed,
+            }
+
         # elite replacement
         # population_fitness = population_fitness[:-1]
 
         population = [chromosome[1] for chromosome in population_fitness]
         iterations_completed = i + 1
 
-        if verbose and i % 5000 == 0:
+
+        if i % 5000 == 0:
             idv = population_fitness[0]
             fitness = idv[0]
             avg_fitness = sum(t[0] for t in population_fitness) / len(population_fitness)
             best_fitnesses.append(fitness)
             pop_fitness_avgs.append(avg_fitness)
             edges = generate_edges(idv[1])
-            print("Best Fitness at iteration " + str(i) + ": " + str(fitness))
-            print("Average Fitness: " + str(avg_fitness))
-            print("Total Distance Traveled: " + str(get_path_distance(edges, distances_dict)))
+            if verbose:
+                print("Best Fitness at iteration " + str(i) + ": " + str(fitness))
+                print("Average Fitness: " + str(avg_fitness))
+                print("Total Distance Traveled: " + str(get_path_distance(edges, distances_dict)))
 
-            if best_fitnesses[-1] >= upper_bound and i > 1:
-                return {
-                    "population": population,
-                    "best_fitnesses": best_fitnesses,
-                    "pop_fitness_avgs": pop_fitness_avgs,
-                    "status": status,
-                    "elapsed": elapsed(),
-                    "iterations_completed": iterations_completed,
-                }
 
     return {
-        "population": population,
+        "population": population_fitness,
         "best_fitnesses": best_fitnesses,
         "pop_fitness_avgs": pop_fitness_avgs,
         "status": status,
