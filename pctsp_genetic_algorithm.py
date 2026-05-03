@@ -7,17 +7,17 @@ from pathlib import Path
 import numpy as np
 
 
-def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, population_size,
-                      scaling_factor, mutation_rate, max_num_genes, depot, chance, max_iters, tournament_size, upper_bound,
-                      valid_init=True, repair_all=False, max_time=600, verbose=False,):
+def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_distance, population_size, mutation_rate,
+                      max_num_genes, depot, chance, max_iters, tournament_size, upper_bound,
+                      valid_init=True, repair_all=False, max_time=600, verbose=False, ):
     start = time.time()
 
     def elapsed():
         return time.time() - start
 
     population, init_timed_out = generate_population(population_size, all_resort_names, max_num_genes, depot, chance,
-                                                    distances_dict, max_distance, valid_init,
-                                                    start=start, max_time=max_time)
+                                                     distances_dict, max_distance, valid_init,
+                                                     start=start, max_time=max_time)
 
     if init_timed_out and not population:
         return {
@@ -28,6 +28,11 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
             "elapsed": elapsed(),
             "iterations_completed": 0,
         }
+
+    max_total_prize = sum(0.5 * snow_7d[r] + 0.5 * snow_24h[r] for r in all_resort_names)
+    scaling_factor = max_total_prize
+
+    # base_factor = max_total_prize / (max_distance * 100)
 
     population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor, distances_dict)
 
@@ -52,6 +57,9 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
             new_chromosome = repair(new_chromosome, distances_dict, snow_7d, snow_24h, max_distance)
 
         population.append(new_chromosome)
+
+        # scaling_factor = base_factor * (1 + i / 1000) ** 2
+
         population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor,
                                              distances_dict)
         # random replacement
@@ -73,7 +81,6 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
         population = [chromosome[1] for chromosome in population_fitness]
         iterations_completed = i + 1
 
-
         if i % 5000 == 0:
             idv = population_fitness[0]
             fitness = idv[0]
@@ -85,7 +92,6 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
                 print("Best Fitness at iteration " + str(i) + ": " + str(fitness))
                 print("Average Fitness: " + str(avg_fitness))
                 print("Total Distance Traveled: " + str(get_path_distance(edges, distances_dict)))
-
 
     return {
         "population": population_fitness,

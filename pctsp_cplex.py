@@ -119,8 +119,9 @@ def solve_pctsp_cplex(resorts, snow_24h, snow_7d, distances_dict, depot_name, ma
 
         mdl.parameters.timelimit.set(max(1.0, solve_budget))
 
-        print(f'Finding optimal trip... (build took {build_time:.1f}s, {solve_budget:.1f}s left for solve)')
-        solution = mdl.solve(log_output=True)
+        if verbose:
+            print(f'Finding optimal trip... (build took {build_time:.1f}s, {solve_budget:.1f}s left for solve)')
+        solution = mdl.solve(log_output=verbose)
 
         total_elapsed = time.time() - start
 
@@ -143,7 +144,8 @@ def solve_pctsp_cplex(resorts, snow_24h, snow_7d, distances_dict, depot_name, ma
                     print(edge_name + ' distance: ' + str(distances_dict[edge_name]))
                 total_traveled += distances_dict[edge_name]
 
-        print("Total traveled distance:", total_traveled)
+        if verbose:
+            print("Total traveled distance:", total_traveled)
 
         return {
             "solution": solution,
@@ -158,7 +160,8 @@ def solve_pctsp_cplex(resorts, snow_24h, snow_7d, distances_dict, depot_name, ma
 
     except TimeoutError as e:
         elapsed_at_timeout = time.time() - start
-        print(f"CPLEX timed out: {e}")
+        if verbose:
+            print(f"CPLEX timed out: {e}")
         return {
             "solution": None,
             "status": f"timeout: {e}",
