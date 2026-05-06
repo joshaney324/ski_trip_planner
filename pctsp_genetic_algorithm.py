@@ -120,8 +120,12 @@ def get_meta_data(dataset_root):
     # add edge vars
     with open(dataset_root / "resort_distances.csv", newline='') as csvfile:
         reader = csv.reader(csvfile)
-        next(reader)
-        distance = [[float(v) for v in row[1:]] for row in reader]
+        header = next(reader)
+        distance = []
+        for row in reader:
+            # Some CSV variants prefix each row with a label; others don't.
+            values = row[1:] if len(row) == len(header) else row
+            distance.append([float(v) for v in values])
 
     distances = np.array(distance)
 
