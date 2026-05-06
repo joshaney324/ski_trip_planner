@@ -138,11 +138,15 @@ def solve_pctsp_cplex(resorts, snow_24h, snow_7d, distances_dict, depot_name, ma
         print("Objective value:", solution.objective_value)
 
         total_traveled = 0
+        tour_edges = []
         for edge_name, edge_var in edge_vars.items():
             if solution[edge_var] == 1:
                 if verbose:
                     print(edge_name + ' distance: ' + str(distances_dict[edge_name]))
                 total_traveled += distances_dict[edge_name]
+                tour_edges.append(edge_name)
+
+        visited_resorts = [name for name, var in resort_vars.items() if solution[var] == 1]
 
         if verbose:
             print("Total traveled distance:", total_traveled)
@@ -155,6 +159,8 @@ def solve_pctsp_cplex(resorts, snow_24h, snow_7d, distances_dict, depot_name, ma
             "solve_time": total_elapsed - build_time,
             "objective": solution.objective_value,
             "total_distance": total_traveled,
+            "tour_edges": tour_edges,
+            "visited_resorts": visited_resorts,
             "upper_bound": mdl.solve_details.best_bound if mdl.solve_details else math.inf,
         }
 
