@@ -2,7 +2,7 @@ from docplex.mp.model import Model
 import cplex
 print(cplex.__version__)
 
-
+# learn how to use CPLEX
 
 # Create model
 mdl = Model(name="simple_lp")

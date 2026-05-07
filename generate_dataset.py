@@ -4,6 +4,7 @@ import random
 
 random.seed(42)
 
+# LLMs were used to generate random names for resorts
 
 EARTH_PREFIXES = [
     "Mount", "Mt.", "Big", "Little", "Grand", "Great", "Wild", "Frozen",
@@ -253,16 +254,9 @@ def random_space_resort(idx):
     }
 
 
-
-
-
-# Each entry is computed from f(min(i,j), max(i,j)) so no upper-triangle
-# storage is needed. Distances are fake but symmetric (dist[i][j]==dist[j][i]).
-# Range: 10–4000 miles (intergalactic wormhole routing varies wildly).
-
 def fake_dist(i, j):
     if i == j:
         return 0.0
     a, b = min(i, j), max(i, j)
     h = (a * 1_000_003 + b * 999_983 + a * b * 7) % 1_000_000
-    return round(10.0 + (h % 399_001) / 100.0, 2)  # 10–4000 miles
+    return round(10.0 + (h % 399_001) / 100.0, 2)

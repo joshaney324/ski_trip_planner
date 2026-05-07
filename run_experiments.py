@@ -60,6 +60,6 @@ for dataset_size in dataset_sizes:
     except Exception as e:
         print(f"dataset_size={dataset_size} failed: {type(e).__name__}: {e}")
 
-    # checkpoint after each size so a later crash doesn't wipe earlier results
+    # checkpoint after each size so if crash results still saved
     save_results()
 

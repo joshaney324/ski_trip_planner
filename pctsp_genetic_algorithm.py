@@ -32,7 +32,6 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
     max_total_prize = sum(0.5 * snow_7d[r] + 0.5 * snow_24h[r] for r in all_resort_names)
     scaling_factor = max_total_prize
 
-    # base_factor = max_total_prize / (max_distance * 100)
 
     population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor, distances_dict)
 
@@ -57,8 +56,6 @@ def genetic_algorithm(all_resort_names, snow_7d, snow_24h, distances_dict, max_d
             new_chromosome = repair(new_chromosome, distances_dict, snow_7d, snow_24h, max_distance)
 
         population.append(new_chromosome)
-
-        # scaling_factor = base_factor * (1 + i / 1000) ** 2
 
         population_fitness = get_pop_fitness(population, snow_7d, snow_24h, max_distance, scaling_factor,
                                              distances_dict)

@@ -3,6 +3,8 @@ import json
 
 import requests
 
+# ski resort data was used to test algorithm
+
 resorts = [
     {"name": "Vail, CO", "lat": 39.6397, "lon": -106.3740},
     {"name": "Breckenridge, CO", "lat": 39.4803, "lon": -106.0665},
